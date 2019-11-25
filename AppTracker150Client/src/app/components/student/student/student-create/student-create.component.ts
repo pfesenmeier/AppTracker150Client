@@ -21,6 +21,7 @@ export class StudentCreateComponent implements OnInit {
 
   createForm(){
     this.studentProfileForm = this.form.group({
+      StudentId: new FormControl,
       FirstName: new FormControl,
       LastName: new FormControl,
       CohortId: new FormControl,

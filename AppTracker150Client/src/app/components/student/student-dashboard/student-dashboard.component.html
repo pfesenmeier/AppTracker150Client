@@ -2,6 +2,15 @@
     This is {{studentProfile.FirstName}} {{studentProfile.LastName}}'s dashboard!
 </div>
 <ng-template #elseBlock>
-    <a routerLink="./student/create">Create a Profile</a>
+<div>
+    <a href="https://{{studentProfile.GitHub}}">GitHub</a>
+    <a href="https://{{studentProfile.ResumeLink}}">Resume</a>
+    <a href="https://{{studentProfile.PortfolioLink}}">Portfolio</a>
+    <a href="https://{{studentProfile.LinkedInLink}}">LinkedIn</a>
+    <a routerLink="/student/edit/{{studentProfile.StudentId}}">Edit Profile</a>
+</div>
+
+        <a routerLink="./student/create/{{studentProfile.StudentId}}">Create a Profile</a>
 </ng-template>
-<a routerLink="./student/applications/index">Browse Your Applications</a>
+
+<a routerLink="/student/applications/index">Browse Your Applications</a>

@@ -3,6 +3,9 @@
 
 <form (ngSubmit)="onSubmit()" [formGroup]="studentProfileForm">
     <div>
+        <div hidden>
+            <input matInput formControlName="StudentId" type="StudentId" required />
+        </div>
         <div>
             <mat-form-field>
                 <input matInput placeholder="First Name" formControlName="FirstName" type="FirstName" required /> 
@@ -35,7 +38,7 @@
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="GitHub Link" formControlName="Github" type="Github" required />
+                <input matInput placeholder="GitHub Link" formControlName="GitHub" type="GitHub" required />
             </mat-form-field>
         </div>
     </div>

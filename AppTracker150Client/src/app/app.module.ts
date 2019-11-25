@@ -41,9 +41,10 @@ const routes = [
   { path: 'login', component: LoginComponent },
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },
-     { path: 'create', component: StudentCreateComponent }
+     { path: 'create/:id', component: StudentCreateComponent },
+     { path: 'edit/:id', component: StudentEditComponent }
   ]},
-  { path: '**', component: RegistrationComponent }
+  { path: '**', component: StudentDashboardComponent }
 ];
 
 

@@ -16,6 +16,7 @@ export class StudentDashboardComponent implements OnInit {
   ngOnInit() {
     this._studentProfileService.getProfile().subscribe((_studentProfile: StudentProfile)=>{
       this.studentProfile = _studentProfile;
+      console.log(this.studentProfile);
     });
   }
 
