@@ -12,24 +12,25 @@ export class StudentService {
   constructor(private http: HttpClient) { }
 
   getStudentApplication() {
-    return this.http.get(`${Api_Url}/api/student/application`, { headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/Student/Applications`, { headers: this.getHeaders() });
 
   }
 
   createStudentApplication(application : Application) {
-    return this.http.post(`${Api_Url}/api/application`, application, { headers: this.getHeaders() });
+    console.log(application);
+    return this.http.post(`${Api_Url}/Student/Applications`, application, { headers: this.getHeaders() });
   }
 
   getApplication(id){
-    return this.http.get(`${Api_Url}/api/application/${id}`, {headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/Student/Applications/${id}`, {headers: this.getHeaders() });
   }
 
   updateApplication(application: Application) {
-    return this.http.put(`${Api_Url}/api/application`, application, {headers: this.getHeaders() });
+    return this.http.put(`${Api_Url}/Student/Applications`, application, {headers: this.getHeaders() });
   }
 
   deleteApplication(id: number) {
-    return this.http.delete(`${Api_Url}/application/${id}`, { headers: this.getHeaders() });
+    return this.http.delete(`${Api_Url}/Student/Applications/${id}`, { headers: this.getHeaders() });
   }
   
 

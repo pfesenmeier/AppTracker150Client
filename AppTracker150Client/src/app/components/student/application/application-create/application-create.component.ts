@@ -13,7 +13,8 @@ export class ApplicationCreateComponent implements OnInit {
 
   applicationForm : FormGroup;
 
-  constructor(private form: FormBuilder, private studentService: StudentService, private router: Router) { this.createForm();
+  constructor(private form: FormBuilder, private studentService: StudentService, private router: Router) { 
+    this.createForm();
   }
 
 
@@ -23,7 +24,6 @@ export class ApplicationCreateComponent implements OnInit {
 
   createForm() {
     this.applicationForm = this.form.group({
-      Id: new FormControl,
       DateCreatedUtc: new FormControl,
       DateModifiedUtc: new FormControl,
       ApplicationStatus: new FormControl,
@@ -33,13 +33,13 @@ export class ApplicationCreateComponent implements OnInit {
       JobLocation: new FormControl,
       Research: new FormControl,
       Contacts: new FormControl,
-      SourceOfPosting: new FormControl,
+      SourceOfPosting: new FormControl
     });
   }
 
   onSubmit() {
     this.studentService.createStudentApplication(this.applicationForm.value).subscribe(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['student/application/index']);
     });
   }
 

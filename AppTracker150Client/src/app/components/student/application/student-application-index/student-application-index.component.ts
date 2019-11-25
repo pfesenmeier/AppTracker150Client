@@ -5,20 +5,21 @@ import { MatTableDataSource } from '@angular/material';
 
 
 @Component({
-  selector: 'app-application-index',
-  templateUrl: './application-index.component.html',
-  styleUrls: ['./application-index.component.css']
+  selector: 'app-student-application-index',
+  templateUrl: './student-application-index.component.html',
+  styleUrls: ['./student-application-index.component.css']
 })
-export class ApplicationIndexComponent implements OnInit {
+export class StudentApplicationIndexComponent implements OnInit {
 
-  columnNames = ['Id', 'Student Id', 'Date Created', 'Date Modified', 'Application Status', 'Company Name', 'Position Name', 'Job Link', ' Job Location', ' Research', 'Contacts', 'Source Of Posting']
+  columnNames = ['Buttons', 'DateCreatedUtc', 'ApplicationStatus', 'CompanyName', 'PositionName', 'JobLink', 'JobLocation', 'Research', 'Contacts', 'SourceOfPosting']
 
-  dataSource: MatTableDataSource<Application>
+  dataSource: MatTableDataSource<Application>;
 
   constructor(private studentService: StudentService) { }
 
   ngOnInit() {
     this.studentService.getStudentApplication().subscribe((application: Application[])=>{
+      console.log(application);
       this.dataSource = new MatTableDataSource<Application>(application);
     });
   }
