@@ -37,6 +37,9 @@ import { StudentDeleteComponent } from './components/admin/student/student-delet
 import { ApplicationIndexComponent } from './components/admin/application/application-index/application-index.component';
 import { ApplicationDetailComponent } from './components/admin/application/application-detail/application-detail.component';
 import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
+import { ApplicationCreateComponent } from './components/student/application/application-create/application-create.component';
+import { ApplicationDeleteComponent } from './components/student/application/application-delete/application-delete.component';
+import { ApplicationEditComponent } from './components/student/application/application-edit/application-edit.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent },
@@ -70,7 +73,10 @@ const routes = [
     StudentDeleteComponent,
     ApplicationIndexComponent,
     ApplicationDetailComponent,
-    ApplicationStudentIndexComponent
+    ApplicationStudentIndexComponent,
+    ApplicationCreateComponent,
+    ApplicationDeleteComponent,
+    ApplicationEditComponent
   ],
   imports: [
     BrowserModule,
