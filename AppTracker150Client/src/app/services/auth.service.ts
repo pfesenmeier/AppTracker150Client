@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { UserInfo } from '../models/UserInfo';
 const Api_Url = 'https://localhost:44302'
 
 @Injectable({
@@ -26,7 +27,20 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/student/index']);
+      this.currentUser().subscribe((response: UserInfo) => {
+        console.log(response);
+      });
+      console.log(Response);
+      this.currentUser().subscribe((response: UserInfo) => {
+        if (response.IsAdmin == true) 
+        {
+            this.router.navigate(['/admin/index']);
+        }
+        else 
+        {
+          this.router.navigate(['student/index']);
+        }
+      });
     });
     
   }

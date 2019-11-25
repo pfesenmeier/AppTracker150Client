@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthService } from './services/auth.service';
-import { LoginComponent } from './components/login/login.component';
 import { CohortIndexComponent } from './components/admin/cohort/cohort-index/cohort-index.component';
 import { CohortCreateComponent } from './components/admin/cohort/cohort-create/cohort-create.component';
 import { CohortDetailComponent } from './components/admin/cohort/cohort-detail/cohort-detail.component';
@@ -35,16 +34,23 @@ import { ApplicationDeleteComponent } from './components/student/application/app
 import { ApplicationEditComponent } from './components/student/application/application-edit/application-edit.component';
 import { StudentProfileService } from './services/student-profile.service';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
+import { AdminDashboardComponent } from './components/admin/dashboard/admin-dashboard.component';
+import { IndexComponent } from './components/index/index.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes = [
-  { path: 'register', component: RegistrationComponent },
+  { path: 'index', component: IndexComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },
      { path: 'create/:id', component: StudentCreateComponent },
-     { path: 'edit/:id', component: StudentEditComponent }
+     { path: 'edit/:id', component: StudentEditComponent },
   ]},
-  { path: '**', component: StudentDashboardComponent }
+  { path: 'admin', children: [
+    { path: 'index', component: AdminDashboardComponent },
+  ]},
+  { path: '**', component: IndexComponent }
 ];
 
 
@@ -53,7 +59,6 @@ const routes = [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
-    LoginComponent,
     StudentDashboardComponent,
     CohortIndexComponent,
     CohortCreateComponent,
@@ -69,7 +74,11 @@ const routes = [
     ApplicationStudentIndexComponent,
     ApplicationCreateComponent,
     ApplicationDeleteComponent,
-    ApplicationEditComponent
+    ApplicationEditComponent,
+    AdminDashboardComponent,
+    StudentDashboardComponent,
+    IndexComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
