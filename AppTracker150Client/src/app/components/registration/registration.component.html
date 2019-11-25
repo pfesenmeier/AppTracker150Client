@@ -5,19 +5,26 @@
     <div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Email" formControlName="email" type="email" required/>
+                <input matInput placeholder="Email" formControlName="email" type="email" required />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Password" formControlName="password" type="password" required/>
+                <input matInput placeholder="Password" formControlName="password" type="password" required />
             </mat-form-field>
         </div>
         <div>
             <mat-form-field>
-                <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required/>
+                <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required />
             </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="User Role" formControlName="userRoles" type="userRoles" required />            
+            </mat-form-field>
+            <p>Type 'Student' or 'Admin'</p>
         </div>
     </div>
     <button mat-raised-button class="nav-btn" color="primary" type="submit">Register</button>
 </form>
+<a routerLink="../admin/index">Back To Dashboard</a>
