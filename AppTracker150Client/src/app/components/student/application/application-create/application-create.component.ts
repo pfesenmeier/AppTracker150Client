@@ -10,13 +10,16 @@ import { Router } from '@angular/router';
 })
 export class ApplicationCreateComponent implements OnInit {
 
+
   applicationForm : FormGroup;
 
   constructor(private form: FormBuilder, private studentService: StudentService, private router: Router) { this.createForm();
   }
 
+
   ngOnInit() {
   }
+
 
   createForm() {
     this.applicationForm = this.form.group({
