@@ -17,7 +17,8 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   register(regUserData: RegisterUser) {
-    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData,  { headers: this.getHeaders() })// code admin access only
+    console.log('service layer');
+    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData,  { headers: this.getHeaders() });// code admin access only
   }
 
   login(loginInfo){
@@ -27,10 +28,6 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.currentUser().subscribe((response: UserInfo) => {
-        console.log(response);
-      });
-      console.log(Response);
       this.currentUser().subscribe((response: UserInfo) => {
         if (response.IsAdmin == true) 
         {
@@ -57,15 +54,15 @@ export class AuthService {
     localStorage.clear();
     this.isLoggedIn.next(false);
 
-    this.http.post(`${Api_Url}/api/Account/Logout`, {headers: this.setHeaders() });
-    this.router.navigate(['/login'])
+    this.http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeaders() });
+    this.router.navigate(['/login']);
   }
 
   private setHeaders(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `bearer ${localStorage.getItem('id_token')}`);
   }
 
-  private getHeaders(){
+  private getHeaders() {
     return new HttpHeaders().set('Authorization', `bearer ${localStorage.getItem('id_token')}`);
   }
 }
