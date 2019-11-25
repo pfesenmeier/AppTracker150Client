@@ -26,9 +26,8 @@ import { StudentCreateComponent } from './components/student/student/student-cre
 import { StudentDetailComponent } from './components/student/student/student-detail/student-detail.component';
 import { StudentEditComponent } from './components/student/student/student-edit/student-edit.component';
 import { StudentDeleteComponent } from './components/admin/student/student-delete/student-delete.component';
-import { ApplicationIndexComponent } from './components/admin/application/application-index/application-index.component';
-import { ApplicationDetailComponent } from './components/admin/application/application-detail/application-detail.component';
-import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
+import { StudentService } from './services/student-application.service';
+
 import { ApplicationCreateComponent } from './components/student/application/application-create/application-create.component';
 import { ApplicationDeleteComponent } from './components/student/application/application-delete/application-delete.component';
 import { ApplicationEditComponent } from './components/student/application/application-edit/application-edit.component';
@@ -46,6 +45,13 @@ const routes = [
      { path: 'index', component: StudentDashboardComponent },
      { path: 'create/:id', component: StudentCreateComponent },
      { path: 'edit/:id', component: StudentEditComponent },
+     {path: 'application', children:[
+   {path:'', component: ApplicationStudentIndexComponent},
+   {path:'create', component: ApplicationCreateComponent},
+   {path: 'detail/:id', component: ApplicationDetailComponent},
+   {path: 'edit/:id', component: ApplicationEditComponent},
+   {path: 'delete/:id', component: ApplicationDeleteComponent},
+  ]
   ]},
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
@@ -90,10 +96,12 @@ const routes = [
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
   ],
   providers: [
     AuthService,
+    StudentService,
     StudentProfileService
   ],
   bootstrap: [AppComponent]
