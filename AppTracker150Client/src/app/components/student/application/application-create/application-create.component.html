@@ -1,0 +1,76 @@
+<h1>Create an Application</h1>
+<hr />
+
+<form (ngSubmit) ="onSubmit()" [formGroup]="noteForm">
+    <div>
+        <div>
+            <div hidden>
+            <mat-form-field>
+                <input matInput placeholder="Id" formControlName="Id" type="Id" required />
+            </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <div hidden>
+            <mat-form-field>
+                <input matInput placeholder="StudentId" formControlName="StudentId" type="StudentId" required />
+            </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Date Applied" formControlName="DateCreatedUtc" type="datetime" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <div hidden>
+            <mat-form-field>
+                <input matInput placeholder="DateModifiedUtc" formControlName="DateModifiedUtc" type="datetime" required />
+            </mat-form-field>
+            </div>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Application Status" formControlName="ApplicationStatus" type="ApplicationStatus" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Company" formControlName="CompanyName" type="CompanyName" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Position" formControlName="PositionName" type="PositionName" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Link to Job" formControlName="JobLink" type="JobLink" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Location of Position" formControlName="JobLocation" type="JobLocation" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Research Done" formControlName="Research" type="Research" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder=" Point of Contact" formControlName="Contacts" type="Contacts" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Source of Posting" formControlName="SourceOfPosting" type="SourceOfPosting" required />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Application</button>
+</form>
+
+<a mat-button routerLink="/application/">Back to List</a>
