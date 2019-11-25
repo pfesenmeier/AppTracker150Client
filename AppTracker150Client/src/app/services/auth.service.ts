@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Token } from '../models/Token';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
+import { UserInfo } from '../models/UserInfo';
 const Api_Url = 'https://localhost:44302'
 
 @Injectable({
@@ -16,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   register(regUserData: RegisterUser) {
-    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData)// code admin access only
+    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData,  { headers: this.getHeaders() })// code admin access only
   }
 
   login(loginInfo){
@@ -26,7 +27,20 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
-      this.router.navigate(['/']);
+      this.currentUser().subscribe((response: UserInfo) => {
+        console.log(response);
+      });
+      console.log(Response);
+      this.currentUser().subscribe((response: UserInfo) => {
+        if (response.IsAdmin == true) 
+        {
+            this.router.navigate(['/admin/index']);
+        }
+        else 
+        {
+          this.router.navigate(['student/index']);
+        }
+      });
     });
     
   }
@@ -48,6 +62,10 @@ export class AuthService {
   }
 
   private setHeaders(): HttpHeaders {
-    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `bearer ${localStorage.getItem('id_token')}`);
+  }
+
+  private getHeaders(){
+    return new HttpHeaders().set('Authorization', `bearer ${localStorage.getItem('id_token')}`);
   }
 }
