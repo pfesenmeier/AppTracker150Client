@@ -16,7 +16,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   register(regUserData: RegisterUser) {
-    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData)// code admin access only
+    return this.http.post(`${Api_Url}/api/Account/Register`, regUserData,  {headers: this.getHeaders()})// code admin access only
   }
 
   login(loginInfo){
@@ -48,6 +48,10 @@ export class AuthService {
   }
 
   private setHeaders(): HttpHeaders {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  }
+
+  private getHeaders(){
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
 }

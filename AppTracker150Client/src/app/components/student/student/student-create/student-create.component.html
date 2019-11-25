@@ -1,1 +1,45 @@
-<p>student-create works!</p>
+<h1>Create a Profile</h1>
+<hr />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="studentProfileForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="First Name" formControlName="FirstName" type="FirstName" required /> 
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Last Name" formControlName="LastName" type="LastName" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput formControlName="CohortId" type="CohortId" value="42" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Resume Link" formControlName="ResumeLink" type="ResumeLink" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="LinkedIn Profile" formControlName="LinkedInLink" type="LinkedInLink" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Portfolio Link" formControlName="PortfolioLink" type="PortfolioLink" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="GitHub Link" formControlName="Github" type="Github" required />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-button class="nav-btn" color="primary" type="submit">Create Profile</button>
+</form>
+
+<a mut-button routeLink="/student/Index">Back to Dashboard</a>
