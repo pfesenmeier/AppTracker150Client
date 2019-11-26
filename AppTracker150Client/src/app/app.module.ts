@@ -37,11 +37,13 @@ import { AdminDashboardComponent } from './components/admin/dashboard/admin-dash
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { ApplicationIndexComponent } from './components/admin/application/application-index/application-index.component';
-import { ApplicationDetailComponent } from './components/student/application/application-detail/application-detail.component';
+import { ApplicationDetailComponent } from './components/application/application-detail.component';
+
 import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
 import { StudentApplicationIndexComponent } from './components/student/application/student-application-index/student-application-index.component';
 import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
 import { AdminStudentService } from './services/admin-student.service';
+
 
 const routes = [
   {path: 'register', component: RegistrationComponent },
@@ -67,7 +69,7 @@ const routes = [
      {path: 'application', children:[
        {path:'index', component: StudentApplicationIndexComponent},
        {path:'create', component: ApplicationCreateComponent},
-       {path: 'detail/:id', component: ApplicationDetailComponent},
+       {path: 'detail', component: ApplicationDetailComponent},
        {path: 'edit/:id', component: ApplicationEditComponent},
        {path: 'delete/:id', component: ApplicationDeleteComponent},
       ]}
@@ -96,17 +98,20 @@ const routes = [
     StudentEditComponent,
     StudentDeleteComponent,
     StudentApplicationIndexComponent,
-    ApplicationDetailComponent,
+
+    
     ApplicationStudentIndexComponent,
     ApplicationCreateComponent,
     ApplicationDeleteComponent,
+    ApplicationDetailComponent,
     ApplicationEditComponent,
     AdminDashboardComponent,
     AdminStudentIndexComponent,
     StudentDashboardComponent,
     StudentApplicationIndexComponent,
     IndexComponent,
-    LoginComponent
+    LoginComponent,
+    ApplicationDetailComponent
   ],
   imports: [
     BrowserModule,
