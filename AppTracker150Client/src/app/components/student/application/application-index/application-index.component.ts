@@ -9,7 +9,7 @@ import { MatTableDataSource } from '@angular/material';
   templateUrl: './application-index.component.html',
   styleUrls: ['./application-index.component.css']
 })
-export class ApplicationIndexComponent implements OnInit {
+export class ApplicationStudentIndexComponent implements OnInit {
 
   columnNames = ['Id', 'Student Id', 'Date Created', 'Date Modified', 'Application Status', 'Company Name', 'Position Name', 'Job Link', ' Job Location', ' Research', 'Contacts', 'Source Of Posting']
 

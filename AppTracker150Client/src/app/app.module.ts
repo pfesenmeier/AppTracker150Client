@@ -45,7 +45,7 @@ const routes = [
   {path: 'login', component: LoginComponent },
 
   {path: 'application', children:[
-   {path:'', component: ApplicationStudentIndexComponent},
+   {path:'', component: ApplicationIndexComponent},
    {path:'create', component: ApplicationCreateComponent},
    {path: 'detail/:id', component: ApplicationDetailComponent},
    {path: 'edit/:id', component: ApplicationEditComponent},
@@ -53,7 +53,7 @@ const routes = [
   ]
 },
 
-  {path: '**', component: ApplicationStudentIndexComponent }
+  {path: '**', component: ApplicationIndexComponent }
   
 ];
 
