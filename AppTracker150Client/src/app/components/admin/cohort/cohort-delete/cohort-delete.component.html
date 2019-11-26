@@ -1,1 +1,30 @@
-<p>cohort-delete works!</p>
+<h1>Delete a Cohort</h1>  
+<h4>Are yo u sure you want to delete this cohort?</h4>
+<hr />
+
+<div *ngIf="cohort">
+    <div>
+        <label for="">Id: </label>
+        <span>{{Cohort.Id}}</span>
+    </div>
+    <div>
+        <label for="">Course: </label>
+        <span>{{Cohort.Course}}</span>
+    </div>
+    <div>
+        <label for=""> StatDateUtc: </label>
+        <span>{{Cohort.StatDateUtc}}</span>
+    </div>
+    <div>
+        <label for="">EndDateUtc: </label>
+        <span>{{Cohort.EndDateUtc}}</span>
+    </div>
+    <div>
+        <label for="">FullTime: </label>
+        <span>{{Cohort.FullTime}}</span>
+    </div>
+
+    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+
+<button mat-raised-button color='primary' routerLink='/cohort'>Back to List</button>

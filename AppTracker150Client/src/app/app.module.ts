@@ -37,18 +37,31 @@ import { AdminDashboardComponent } from './components/admin/dashboard/admin-dash
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { ApplicationIndexComponent } from './components/admin/application/application-index/application-index.component';
-import { ApplicationDetailComponent } from './components/admin/application/application-detail/application-detail.component';
+import { ApplicationDetailComponent } from './components/student/application/application-detail/application-detail.component';
 import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
 import { StudentApplicationIndexComponent } from './components/student/application/student-application-index/student-application-index.component';
+import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
+import { AdminStudentService } from './services/admin-student.service';
 
 const routes = [
+  {path: 'register', component: RegistrationComponent },
+  {path: 'login', component: LoginComponent },
+  {
+    path: 'cohort', children: [
+      { path: '', component: CohortIndexComponent },
+      { path: 'create', component: CohortCreateComponent },
+      { path: 'detail:id', component: CohortDetailComponent },
+      { path: 'edit/:id', component: CohortEditComponent },
+      { path: 'delete/:id', component: CohortDeleteComponent },
+    ]
+  },
   { path: 'index', component: IndexComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
 
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },
-     { path: 'create/:id', component: StudentCreateComponent },
+     { path: 'create', component: StudentCreateComponent },
      { path: 'edit/:id', component: StudentEditComponent },
      
      {path: 'application', children:[
@@ -61,6 +74,7 @@ const routes = [
   ]},
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
+    { path: 'student', component: AdminStudentIndexComponent }
   ]},
   { path: '**', component: IndexComponent }
 ];
@@ -88,6 +102,7 @@ const routes = [
     ApplicationDeleteComponent,
     ApplicationEditComponent,
     AdminDashboardComponent,
+    AdminStudentIndexComponent,
     StudentDashboardComponent,
     StudentApplicationIndexComponent,
     IndexComponent,
@@ -109,7 +124,8 @@ const routes = [
   providers: [
     AuthService,
     StudentService,
-    StudentProfileService
+    StudentProfileService,
+    AdminStudentService
   ],
   bootstrap: [AppComponent]
 })
