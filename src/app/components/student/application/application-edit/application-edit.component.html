@@ -1,1 +1,64 @@
-<p>application-edit works!</p>
+<h1>Edit an Application</h1>
+<hr />
+
+<div *ngIf="application">
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+        <div>
+            <div hidden>
+                <input matInput placeholder="Id" formControlName="Id" type="number" required [value]="application.Id" />
+            </div>
+            <div hidden>
+                <input matInput placeholder="StudentId" formControlName="StudentId" type="number" required [value]="application.StudentId" />
+            </div>
+            <div hidden>
+                <input matInput placeholder="DateCreatedUtc" formControlName="DateCreatedUtc" type="datetime" required [value]="application.DateCreatedUtc" />
+            </div>
+            <div hidden>
+                <input matInput placeholder="DateModifiedUtc" formControlName="DateModifiedUtc" type="datetime" required [value]="application.DateModifiedUtc" />
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="ApplicationStatus" formControlName="ApplicationStatus" type="text" required [value]="application.ApplicationStatus" />
+                </mat-form-field>
+            </div>
+            <div>
+                    <mat-form-field>
+                        <input matInput placeholder="CompanyName" formControlName="CompanyName" type="text" required [value]="application.CompanyName" />
+                    </mat-form-field>
+            </div>
+            <div>
+                    <mat-form-field>
+                        <input matInput placeholder="PositionName" formControlName="PositionName" type="text" required [value]="application.PositionName" />
+                    </mat-form-field>
+            </div>
+            <div>
+                    <mat-form-field>
+                        <input matInput placeholder="JobLink" formControlName="JobLink" type="text" required [value]="application.JobLink" />
+                    </mat-form-field>
+            </div>
+            <div>
+                    <mat-form-field>
+                        <input matInput placeholder="JobLocation" formControlName="JobLocation" type="text" required [value]="application.JobLocation" />
+                    </mat-form-field>
+            </div>
+            <div>
+                    <mat-form-field>
+                        <input matInput placeholder="Research" formControlName="Research" type="text" required [value]="application.Research" />
+                    </mat-form-field>
+            </div>
+            <div>
+                    <mat-form-field>
+                        <input matInput placeholder="Contacts" formControlName="Contacts" type="text" required [value]="application.Contacts" />
+                    </mat-form-field>
+            </div>
+            <div>
+                    <mat-form-field>
+                        <input matInput placeholder="SourceOfPosting" formControlName="SourceOfPosting" type="text" required [value]="application.SourceOfPosting" />
+                    </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button class="nav-btn" color="primary" type="submit"></button>
+    </form>
+</div>
+
+<a mat-button routerLink="/application">Back to List</a>
