@@ -17,7 +17,6 @@ export class StudentService {
   }
 
   createStudentApplication(application : Application) {
-    console.log(application);
     return this.http.post(`${Api_Url}/Student/Applications`, application, { headers: this.getHeaders() });
   }
 

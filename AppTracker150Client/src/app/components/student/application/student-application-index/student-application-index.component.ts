@@ -19,7 +19,6 @@ export class StudentApplicationIndexComponent implements OnInit {
 
   ngOnInit() {
     this.studentService.getStudentApplication().subscribe((application: Application[])=>{
-      console.log(application);
       this.dataSource = new MatTableDataSource<Application>(application);
     });
   }

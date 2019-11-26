@@ -28,9 +28,9 @@ import { StudentEditComponent } from './components/student/student/student-edit/
 import { StudentDeleteComponent } from './components/admin/student/student-delete/student-delete.component';
 import { StudentService } from './services/student-application.service';
 
-import { ApplicationCreateComponent } from './components/student/application/application-create/application-create.component';
-import { ApplicationDeleteComponent } from './components/student/application/application-delete/application-delete.component';
-import { ApplicationEditComponent } from './components/student/application/application-edit/application-edit.component';
+import { ApplicationCreateComponent } from './components/student/application/student-application-create/application-create.component';
+import { ApplicationDeleteComponent } from './components/student/application/student-application-delete/application-delete.component';
+import { ApplicationEditComponent } from './components/student/application/student-application-edit/application-edit.component';
 import { StudentProfileService } from './services/student-profile.service';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { AdminDashboardComponent } from './components/admin/dashboard/admin-dashboard.component';
@@ -45,17 +45,19 @@ const routes = [
   { path: 'index', component: IndexComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
+
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },
      { path: 'create/:id', component: StudentCreateComponent },
      { path: 'edit/:id', component: StudentEditComponent },
+     
      {path: 'application', children:[
-   {path:'index', component: StudentApplicationIndexComponent},
-   {path:'create', component: ApplicationCreateComponent},
-   {path: 'detail/:id', component: ApplicationDetailComponent},
-   {path: 'edit/:id', component: ApplicationEditComponent},
-   {path: 'delete/:id', component: ApplicationDeleteComponent},
-  ]}
+       {path:'index', component: StudentApplicationIndexComponent},
+       {path:'create', component: ApplicationCreateComponent},
+       {path: 'detail/:id', component: ApplicationDetailComponent},
+       {path: 'edit/:id', component: ApplicationEditComponent},
+       {path: 'delete/:id', component: ApplicationDeleteComponent},
+      ]}
   ]},
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
@@ -79,7 +81,7 @@ const routes = [
     StudentDetailComponent,
     StudentEditComponent,
     StudentDeleteComponent,
-    ApplicationIndexComponent,
+    StudentApplicationIndexComponent,
     ApplicationDetailComponent,
     ApplicationStudentIndexComponent,
     ApplicationCreateComponent,
