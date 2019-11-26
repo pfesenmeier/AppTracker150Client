@@ -3,8 +3,9 @@ export interface StudentProfile {
     FirstName: string;
     LastName: string;
     CohortId: string;
-    ResumeLink: string;
-    LinkedInLink: string;
-    PortfolioLink: string;
-    GitHub: string;
+    ResumeLink?: string;
+    LinkedInLink?: string;
+    PortfolioLink?: string;
+    GitHub?: string;
+    UserName?: string;
 }
