@@ -18,7 +18,7 @@ export class CohortDeleteComponent implements OnInit {
  
   constructor(private cohortService: CohortService, private ar: ActivatedRoute, private router: Router) { 
     this.ar.paramMap.subscribe(p => {
-      this.cohortService.getAllCohort(p.get('id')).subscribe((singleCohort: Cohort) => {
+      this.cohortService.getCohort(p.get('id')).subscribe((singleCohort: Cohort) => {
         this.cohort = singleCohort;
       });
     });

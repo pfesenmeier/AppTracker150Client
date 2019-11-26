@@ -37,7 +37,7 @@ import { AdminDashboardComponent } from './components/admin/dashboard/admin-dash
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { ApplicationIndexComponent } from './components/admin/application/application-index/application-index.component';
-import { ApplicationDetailComponent } from './components/admin/application/application-detail/application-detail.component';
+import { ApplicationDetailComponent } from './components/student/application/application-detail/application-detail.component';
 import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
 import { StudentApplicationIndexComponent } from './components/student/application/student-application-index/student-application-index.component';
 import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
@@ -55,7 +55,6 @@ const routes = [
       { path: 'delete/:id', component: CohortDeleteComponent },
     ]
   },
-  {path: '**', component: RegistrationComponent },
   { path: 'index', component: IndexComponent },
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },

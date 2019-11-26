@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cohort } from 'src/app/models/Cohort';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { CohortService } from 'src/app/services/Cohort.service';
+import { CohortService } from 'src/app/services/cohort.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
