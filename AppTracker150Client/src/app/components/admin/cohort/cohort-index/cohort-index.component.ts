@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CohortService } from 'src/app/services/cohort.service';
+import { Cohort } from 'src/app/models/Cohort';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-cohort-index',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CohortIndexComponent implements OnInit {
 
-  constructor() { }
+  columnNames = ['Id', 'Course', 'StartDateUtc', 'EndDateUtc', 'FullTime', 'buttons'];
+  dataSource: MatTableDataSource<Cohort>;
+ 
+  constructor(private cohortService: CohortService) { }
 
   ngOnInit() {
+    this.cohortService.getAllCohort().subscribe((cohort: Cohort[])=>{
+      this.dataSource = new MatTableDataSource<Cohort>(cohort);
+      
+    });
   }
-
 }

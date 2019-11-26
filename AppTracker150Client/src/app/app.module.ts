@@ -44,9 +44,19 @@ import { AdminStudentIndexComponent } from './components/admin/student/admin-stu
 import { AdminStudentService } from './services/admin-student.service';
 
 const routes = [
+  {path: 'register', component: RegistrationComponent },
+  {path: 'login', component: LoginComponent },
+  {
+    path: 'cohort', children: [
+      { path: '', component: CohortIndexComponent },
+      { path: 'create', component: CohortCreateComponent },
+      { path: 'detail:id', component: CohortDetailComponent },
+      { path: 'edit/:id', component: CohortEditComponent },
+      { path: 'delete/:id', component: CohortDeleteComponent },
+    ]
+  },
+  {path: '**', component: RegistrationComponent },
   { path: 'index', component: IndexComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegistrationComponent },
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },
      { path: 'create', component: StudentCreateComponent },

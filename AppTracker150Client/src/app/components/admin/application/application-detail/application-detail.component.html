@@ -1,1 +1,30 @@
-<p>application-detail works!</p>
+
+
+
+<h1>Details</h1>
+<hr />
+
+<div *ngIf="application">
+    <div>
+        <label>Title: </label>
+        <span>{{application.Title}}</span>
+    </div>
+    <div>
+        <label>Content: </label>
+        <span>{{application.Content}}</span>
+    </div>
+    <div>
+        <label>Created At: </label>
+        <span>{{application.CreatedUtc | date: 'fullDate'}}</span>
+    </div>
+    <div>
+        <label>Last Modified: </label>
+        <span>{{application.ModifiedUtc | date: 'fullDate'}}</span>
+    </div>
+
+    <button mat-raised-button color="accent">Edit</button>
+</div>
+
+<button mat-raised-button color='primary' routerLink='/application'>Back to List</button>
+
+

@@ -1,1 +1,29 @@
-<p>cohort-detail works!</p>
+<h1>Details</h1>
+<hr />
+
+<div *ngIf="cohort">
+    <div>
+        <label>Id: </label>
+        <span>{{Cohort.Id}}</span>
+    </div>
+    <div>
+        <label>Course: </label>
+        <span>{{Cohort.Course}}</span>
+    </div>
+    <div>
+        <label> StatDateUtc: </label>
+        <span>{{Cohort.StatDateUtc}}</span>
+    </div>
+    <div>
+        <label>EndDateUtc: </label>
+        <span>{{Cohort.EndDateUtc}}</span>
+    </div>
+    <div>
+        <label>FullTime: </label>
+        <span>{{Cohort.FullTime}}</span>
+    </div>
+
+    <button mat-raised-button color="accent">Edit</button>
+</div>
+
+<button mat-raised-button color='primary' routerLink='/cohort'>Back to List</button>
