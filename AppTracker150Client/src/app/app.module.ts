@@ -42,13 +42,6 @@ import { ApplicationStudentIndexComponent } from './components/admin/application
 import { StudentApplicationIndexComponent } from './components/student/application/student-application-index/student-application-index.component';
 
 const routes = [
-<<<<<<< HEAD
-  {path: 'register', component: RegistrationComponent },
-  {path: 'login', component: LoginComponent },
-
-  {path: 'application', children:[
-   {path:'', component: ApplicationIndexComponent},
-=======
   { path: 'index', component: IndexComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistrationComponent },
@@ -58,25 +51,16 @@ const routes = [
      { path: 'edit/:id', component: StudentEditComponent },
      {path: 'application', children:[
    {path:'index', component: StudentApplicationIndexComponent},
->>>>>>> 29a9816c8ee95bc8282cb6ae91d8f2fe19e32cd3
    {path:'create', component: ApplicationCreateComponent},
    {path: 'detail/:id', component: ApplicationDetailComponent},
    {path: 'edit/:id', component: ApplicationEditComponent},
    {path: 'delete/:id', component: ApplicationDeleteComponent},
-<<<<<<< HEAD
-  ]
-},
-
-  {path: '**', component: ApplicationIndexComponent }
-  
-=======
   ]}
   ]},
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
   ]},
   { path: '**', component: IndexComponent }
->>>>>>> 29a9816c8ee95bc8282cb6ae91d8f2fe19e32cd3
 ];
 
 

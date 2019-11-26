@@ -9,11 +9,7 @@ import { MatTableDataSource } from '@angular/material';
   templateUrl: './student-application-index.component.html',
   styleUrls: ['./student-application-index.component.css']
 })
-<<<<<<< HEAD:AppTracker150Client/src/app/components/student/application/application-index/application-index.component.ts
-export class ApplicationStudentIndexComponent implements OnInit {
-=======
 export class StudentApplicationIndexComponent implements OnInit {
->>>>>>> 29a9816c8ee95bc8282cb6ae91d8f2fe19e32cd3:AppTracker150Client/src/app/components/student/application/student-application-index/student-application-index.component.ts
 
   columnNames = ['Buttons', 'DateCreatedUtc', 'ApplicationStatus', 'CompanyName', 'PositionName', 'JobLink', 'JobLocation', 'Research', 'Contacts', 'SourceOfPosting']
 
