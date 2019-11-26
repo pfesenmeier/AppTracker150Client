@@ -3,12 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { StudentService } from 'src/app/services/student-application.service';
 import { Application } from 'src/app/models/Application';
 
+
 @Component({
   selector: 'app-application-detail',
   templateUrl: './application-detail.component.html',
   styleUrls: ['./application-detail.component.css']
 })
 export class ApplicationDetailComponent implements OnInit {
+
 
   application: Application;
 
@@ -20,6 +22,7 @@ export class ApplicationDetailComponent implements OnInit {
         this.application = application;
       });
     });
+
   }
 
 }

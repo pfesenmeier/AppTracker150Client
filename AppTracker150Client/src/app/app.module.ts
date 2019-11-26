@@ -10,77 +10,102 @@ import { MatToolbarModule,
          MatButtonModule,
          MatFormFieldModule,
          MatInputModule,
-         MatTableModule,
+         MatTableModule
 } from "@angular/material";
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AuthService } from './services/auth.service';
-import { LoginComponent } from './components/login/login.component';
-import { DashboardComponent } from './components/admin/dashboard/dashboard.component';
 import { CohortIndexComponent } from './components/admin/cohort/cohort-index/cohort-index.component';
 import { CohortCreateComponent } from './components/admin/cohort/cohort-create/cohort-create.component';
 import { CohortDetailComponent } from './components/admin/cohort/cohort-detail/cohort-detail.component';
 import { CohortDeleteComponent } from './components/admin/cohort/cohort-delete/cohort-delete.component';
 import { CohortEditComponent } from './components/admin/cohort/cohort-edit/cohort-edit.component';
-
 import { StudentCreateComponent } from './components/student/student/student-create/student-create.component';
 import { StudentDetailComponent } from './components/student/student/student-detail/student-detail.component';
 import { StudentEditComponent } from './components/student/student/student-edit/student-edit.component';
 import { StudentDeleteComponent } from './components/admin/student/student-delete/student-delete.component';
 import { StudentService } from './services/student-application.service';
 
-
+import { ApplicationCreateComponent } from './components/student/application/application-create/application-create.component';
+import { ApplicationDeleteComponent } from './components/student/application/application-delete/application-delete.component';
+import { ApplicationEditComponent } from './components/student/application/application-edit/application-edit.component';
+import { StudentProfileService } from './services/student-profile.service';
+import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
+import { AdminDashboardComponent } from './components/admin/dashboard/admin-dashboard.component';
+import { IndexComponent } from './components/index/index.component';
+import { LoginComponent } from './components/login/login.component';
 import { ApplicationIndexComponent } from './components/admin/application/application-index/application-index.component';
 import { ApplicationDetailComponent } from './components/admin/application/application-detail/application-detail.component';
 import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
-import { ApplicationDeleteComponent } from './components/student/application/application-delete/application-delete.component';
-import { ApplicationEditComponent } from './components/student/application/application-edit/application-edit.component';
-import { ApplicationCreateComponent } from './components/student/application/application-create/application-create.component';
-
+import { StudentApplicationIndexComponent } from './components/student/application/student-application-index/student-application-index.component';
 
 const routes = [
+<<<<<<< HEAD
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent },
 
   {path: 'application', children:[
    {path:'', component: ApplicationIndexComponent},
+=======
+  { path: 'index', component: IndexComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegistrationComponent },
+  { path: 'student', children: [
+     { path: 'index', component: StudentDashboardComponent },
+     { path: 'create/:id', component: StudentCreateComponent },
+     { path: 'edit/:id', component: StudentEditComponent },
+     {path: 'application', children:[
+   {path:'index', component: StudentApplicationIndexComponent},
+>>>>>>> 29a9816c8ee95bc8282cb6ae91d8f2fe19e32cd3
    {path:'create', component: ApplicationCreateComponent},
    {path: 'detail/:id', component: ApplicationDetailComponent},
    {path: 'edit/:id', component: ApplicationEditComponent},
    {path: 'delete/:id', component: ApplicationDeleteComponent},
+<<<<<<< HEAD
   ]
 },
 
   {path: '**', component: ApplicationIndexComponent }
   
+=======
+  ]}
+  ]},
+  { path: 'admin', children: [
+    { path: 'index', component: AdminDashboardComponent },
+  ]},
+  { path: '**', component: IndexComponent }
+>>>>>>> 29a9816c8ee95bc8282cb6ae91d8f2fe19e32cd3
 ];
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
-    LoginComponent,
-    DashboardComponent,
+    StudentDashboardComponent,
     CohortIndexComponent,
     CohortCreateComponent,
     CohortDetailComponent,
     CohortDeleteComponent,
     CohortEditComponent,
-    
     StudentCreateComponent,
     StudentDetailComponent,
     StudentEditComponent,
     StudentDeleteComponent,
-
     ApplicationIndexComponent,
     ApplicationDetailComponent,
     ApplicationStudentIndexComponent,
+    ApplicationCreateComponent,
     ApplicationDeleteComponent,
     ApplicationEditComponent,
-    ApplicationCreateComponent
+    AdminDashboardComponent,
+    StudentDashboardComponent,
+    StudentApplicationIndexComponent,
+    IndexComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +123,7 @@ const routes = [
   providers: [
     AuthService,
     StudentService,
-  
+    StudentProfileService
   ],
   bootstrap: [AppComponent]
 })

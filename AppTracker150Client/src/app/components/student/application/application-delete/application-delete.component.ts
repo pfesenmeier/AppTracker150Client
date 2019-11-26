@@ -10,6 +10,7 @@ import { StudentService } from 'src/app/services/student-application.service';
 })
 export class ApplicationDeleteComponent implements OnInit {
 
+
   application: Application;
 
   constructor(private activatedRoute: ActivatedRoute, private StudentService: StudentService,       private router: Router) {
@@ -28,5 +29,4 @@ export class ApplicationDeleteComponent implements OnInit {
       this.router.navigate(['/']);
    });
   }
-
 }

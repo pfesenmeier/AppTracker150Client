@@ -1,31 +1,17 @@
 <h1>Create an Application</h1>
 <hr />
 
-<form (ngSubmit) ="onSubmit()" [formGroup]="noteForm">
+<form (ngSubmit) ="onSubmit()" [formGroup]="applicationForm">
     <div>
         <div>
-            <div hidden>
             <mat-form-field>
-                <input matInput placeholder="Id" formControlName="Id" type="Id" required />
-            </mat-form-field>
-            </div>
-        </div>
-        <div>
-            <div hidden>
-            <mat-form-field>
-                <input matInput placeholder="StudentId" formControlName="StudentId" type="StudentId" required />
-            </mat-form-field>
-            </div>
-        </div>
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Date Applied" formControlName="DateCreatedUtc" type="datetime" required />
+                <input matInput placeholder="Date Applied" formControlName="DateCreatedUtc" type="DateCreatedUtc" required />
             </mat-form-field>
         </div>
         <div>
             <div hidden>
             <mat-form-field>
-                <input matInput placeholder="DateModifiedUtc" formControlName="DateModifiedUtc" type="datetime" required />
+                <input matInput placeholder="DateModifiedUtc" formControlName="DateModifiedUtc" type="DateModifiedUtc" required />
             </mat-form-field>
             </div>
         </div>

@@ -4,13 +4,13 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { StudentService } from 'src/app/services/student-application.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-application-edit',
   templateUrl: './application-edit.component.html',
   styleUrls: ['./application-edit.component.css']
 })
 export class ApplicationEditComponent implements OnInit {
+
 
   application: Application;
   editForm: FormGroup;
