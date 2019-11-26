@@ -40,6 +40,8 @@ import { ApplicationIndexComponent } from './components/admin/application/applic
 import { ApplicationDetailComponent } from './components/admin/application/application-detail/application-detail.component';
 import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
 import { StudentApplicationIndexComponent } from './components/student/application/student-application-index/student-application-index.component';
+import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
+import { AdminStudentService } from './services/admin-student.service';
 
 const routes = [
   { path: 'index', component: IndexComponent },
@@ -47,7 +49,7 @@ const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },
-     { path: 'create/:id', component: StudentCreateComponent },
+     { path: 'create', component: StudentCreateComponent },
      { path: 'edit/:id', component: StudentEditComponent },
      {path: 'application', children:[
    {path:'index', component: StudentApplicationIndexComponent},
@@ -59,6 +61,7 @@ const routes = [
   ]},
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
+    { path: 'student', component: AdminStudentIndexComponent }
   ]},
   { path: '**', component: IndexComponent }
 ];
@@ -86,6 +89,7 @@ const routes = [
     ApplicationDeleteComponent,
     ApplicationEditComponent,
     AdminDashboardComponent,
+    AdminStudentIndexComponent,
     StudentDashboardComponent,
     StudentApplicationIndexComponent,
     IndexComponent,
@@ -107,7 +111,8 @@ const routes = [
   providers: [
     AuthService,
     StudentService,
-    StudentProfileService
+    StudentProfileService,
+    AdminStudentService
   ],
   bootstrap: [AppComponent]
 })

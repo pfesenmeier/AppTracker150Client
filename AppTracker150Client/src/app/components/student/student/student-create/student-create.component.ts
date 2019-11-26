@@ -35,7 +35,7 @@ export class StudentCreateComponent implements OnInit {
   onSubmit() {
     console.log(this.studentProfileForm.value)
     this.studentProfileService.createStudentProfile(this.studentProfileForm.value).subscribe(()=> {
-      this.router.navigate(['/student']);
+      this.router.navigate(['/student/index']);
     })
   }
 
