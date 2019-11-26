@@ -1,0 +1,35 @@
+<h1>Profile Details</h1>
+<hr />
+
+<div *ngIf="studentProfile">
+    <div>
+        <label>First Name</label>
+        <span>{{ studentProfile.FirstName }}</span>
+    </div>
+    <div>
+        <label>Last Name</label>
+        <span>{{ studentProfile.LastName }}</span>
+    </div>
+    <div>
+        <label>Cohort Id</label>
+        <span>{{ studentProfile.CohortId }}</span>
+    </div>
+    <div>
+        <label>Resume</label>
+        <span>{{ studentProfile.ResumeLink }}</span>
+    </div>
+    <div>
+        <label>LinkedIn</label>
+        <span>{{ studentProfile.LinkedInLink }}</span>
+    </div>
+    <div>
+        <label>Portfolio</label>
+        <span>{{ studentProfile.PortfolioLink }}</span>
+    </div>
+    <div>
+        <label>GitHub</label>
+        <span>{{ studentProfile.GitHub }}</span>
+    </div>
+</div>
+
+<a routerLink="/student">Back To Dashboard</a>

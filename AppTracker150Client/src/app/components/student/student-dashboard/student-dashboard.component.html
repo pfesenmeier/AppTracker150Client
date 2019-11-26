@@ -1,0 +1,21 @@
+<div *ngIf="studentProfile; else elseblock;">
+    <div>
+        This is {{studentProfile.FirstName}} {{studentProfile.LastName}}'s dashboard!
+    </div>
+    
+    <div>
+        <a *ngIf="studentProfile.GitHub; else githubblock" href="https://{{studentProfile.GitHub}}">GitHub</a>
+        <ng-template class="missing" #githubblock>Add link to your Github!</ng-template><br>
+        <a *ngIf="studentProfile.ResumeLink; else resumeblock" href="https://{{studentProfile.ResumeLink}}">Resume</a>
+        <ng-template #resumeblock class="missing">Add link to your resume (Google Docs, please)!</ng-template><br>
+        <a *ngIf="studentProfile.PortfolioLink; else portfolioblock" href="https://{{studentProfile.PortfolioLink}}">Portfolio</a>
+        <ng-template #portfolioblock class="missing">Add a link to your portfolio!</ng-template><br>
+        <a *ngIf="studentProfile.LinkedInLink; else linkedinblock" href="https://{{studentProfile.LinkedInLink}}">LinkedIn</a>
+        <ng-template #portfolioblock class="missing">Add a link to your LinkedIn profile!</ng-template><br>
+        <a *ngIf="studentProfile.StudentId" routerLink="/student/edit/{{studentProfile.StudentId}}">Edit Profile</a>
+    </div>
+    <a routerLink="/student/application/index/">Browse Your Applications</a>
+</div>
+<ng-template #elseblock>
+    <a routerLink="../create">Create a Profile</a>
+</ng-template>

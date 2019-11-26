@@ -1,0 +1,49 @@
+<h1>Edit profile</h1>
+<hr />
+
+<div *ngIf="profile">
+    <form (ngSubmit)="onSubmit()" [formGroup]="editForm">
+        <div>
+            <div hidden>
+                <input matInput formControlName="StudentId" type="StudentId" required />
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="First Name" formControlName="FirstName" type="FirstName" required /> 
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Last Name" formControlName="LastName" type="LastName" required />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput formControlName="CohortId" type="CohortId" value="42" required />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Resume Link" formControlName="ResumeLink" type="ResumeLink" required />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="LinkedIn Profile" formControlName="LinkedInLink" type="LinkedInLink" required />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="Portfolio Link" formControlName="PortfolioLink" type="PortfolioLink" required />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="GitHub Link" formControlName="GitHub" type="GitHub" required />
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-button class="nav-btn" color="primary" type="submit">Submit Changes</button>
+    </form>
+</div>
+<a mut-button routeLink="/student/Index">Back to Dashboard</a>
