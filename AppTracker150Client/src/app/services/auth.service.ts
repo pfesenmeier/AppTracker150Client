@@ -29,6 +29,7 @@ export class AuthService {
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
       this.currentUser().subscribe((response: UserInfo) => {
+        console.log(response.IsAdmin);
         if (response.IsAdmin == true) 
         {
             this.router.navigate(['/admin/index']);

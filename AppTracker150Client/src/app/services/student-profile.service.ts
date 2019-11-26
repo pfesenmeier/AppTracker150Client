@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { StudentProfile } from '../models/StudentProfile';
 
-const Api_Url = "https://localhost:44302/";
+const Api_Url = "https://localhost:44302;";
 
 @Injectable({
   providedIn: 'root'
