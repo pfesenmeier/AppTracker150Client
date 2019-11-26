@@ -4,5 +4,11 @@
 
 .nav-btn {
     margin-right: 0.5em;
-    background-color: red;
+    background-color: #ff6866;
+}
+
+.padding {
+    padding-left: 15%;
+    padding-right: 15%;
+    background-color: 0;
 }

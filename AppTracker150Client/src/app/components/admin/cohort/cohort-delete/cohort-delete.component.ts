@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CohortService } from 'src/app/services/cohort.service';
+import { Cohort } from 'src/app/models/Cohort';
+import { MatTableDataSource } from '@angular/material';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-cohort-delete',
@@ -7,9 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CohortDeleteComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  cohort: Cohort;
+  
+  columnNames = ['Id', 'Course', 'StartDateUtc', 'EndDateUtc', 'FullTime', 'buttons'];
+  dataSource: MatTableDataSource<Cohort>;
+ 
+  constructor(private cohortService: CohortService, private ar: ActivatedRoute, private router: Router) { 
+    this.ar.paramMap.subscribe(p => {
+      this.cohortService.getCohort(p.get('id')).subscribe((singleCohort: Cohort) => {
+        this.cohort = singleCohort;
+      });
+    });
   }
 
+  ngOnInit() {
+    this.cohortService.getAllCohort().subscribe((cohort: Cohort[])=>{
+      this.dataSource = new MatTableDataSource<Cohort>(cohort);
+      
+    });
+  }
 }
