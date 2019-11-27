@@ -11,3 +11,9 @@ img {
 body{
     background-color: chartreuse;
 }
+
+.login {
+    position: relative;
+    left: 50%;
+    
+}

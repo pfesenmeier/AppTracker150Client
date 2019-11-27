@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, CheckboxControlValueAccessor } from '@angular/forms';
 import { CohortService } from 'src/app/services/cohort.service';
 import { Router } from '@angular/router';
-
+import {MatCheckboxModule} from '@angular/material'
 
 @Component({
   selector: 'app-cohort-create',
@@ -12,26 +12,35 @@ import { Router } from '@angular/router';
 export class CohortCreateComponent implements OnInit {
 
   cohortForm: FormGroup;
-  cohortService: CohortService;
-  
-  constructor(private form: FormBuilder, private noteService: CohortService, private router: Router) { }
+  checked = false;
 
+  
+  constructor(private form: FormBuilder, private  cohortService: CohortService, private router: Router) { 
+    this.createForm();
+  }
+
+  
   ngOnInit() {
   }
 
   createForm() {
     this.cohortForm = this.form.group({
-      Id: new FormControl,
-      Course: new FormControl
+      Id: new FormControl(),
+      Course: new FormControl(),
+      StartDateUtc: new FormControl(),
+      EndDateUtc: new FormControl(),
+      FullTime: new FormControl(false)
     })
   }
 
   onSubmit() {
+    
     this.cohortService.createCohort(this.cohortForm.value).subscribe(() => {
       this.router.navigate(['/cohort']); 
+
     });
+    console.log(this.cohortForm.value)
   }
 
-
-
+  
 }
