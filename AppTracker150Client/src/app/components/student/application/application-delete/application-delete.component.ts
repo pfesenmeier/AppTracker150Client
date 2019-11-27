@@ -13,7 +13,7 @@ export class ApplicationDeleteComponent implements OnInit {
 
   application: Application;
 
-  constructor(private activatedRoute: ActivatedRoute, private applicationService: ApplicationService,       private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private applicationService: ApplicationService, private router: Router) {
     this.activatedRoute.paramMap.subscribe(params => {
     applicationService.getApplication(params.get('id')).subscribe((application: Application) => {
       this.application = application;
@@ -26,7 +26,7 @@ export class ApplicationDeleteComponent implements OnInit {
 
   onDelete() {
   this.applicationService.deleteApplication(this.application.Id).subscribe(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['../']);
    });
   }
 }

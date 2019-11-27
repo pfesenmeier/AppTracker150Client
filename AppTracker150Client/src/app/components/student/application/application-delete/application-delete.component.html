@@ -2,14 +2,14 @@
 <h4>Are you sure you want to delete this application?</h4>
 <hr />
 
-<div *ngIf="Application">
+<div *ngIf="application">
     <div>
         <label>Id: </label>
         <span>{{application.Id}}</span>
     </div>
     <div>
         <label>Student Id: </label>
-        <span>{{application.StudentId}}</span>
+        <span>{{StudentId}}</span>
     </div>
     <div>
             <label>Created At: </label>
@@ -55,4 +55,7 @@
    <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
 </div>
 
-<button mat-raised-button color="primary" routerLink="/applications">Back to List</button>
+<button mat-raised-button color="primary" routerLink="/student/application/index">Back to List</button>
+
+
+
