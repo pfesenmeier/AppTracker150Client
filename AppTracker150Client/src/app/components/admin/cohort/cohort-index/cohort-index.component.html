@@ -31,7 +31,7 @@
 
         <ng-container matColumnDef='StartDateUtc'>
             <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
-            <mat-cell *matCellDef='let cohort;'>{{note.StartDateUtc | date:'fullDate'}}</mat-cell>
+            <mat-cell *matCellDef='let cohort;'>{{cohort.StartDateUtc | date:'fullDate'}}</mat-cell>
         </ng-container> 
 
         <ng-container matColumnDef='buttons'>

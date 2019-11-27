@@ -53,7 +53,7 @@ const routes = [
     path: 'cohort', children: [
       { path: '', component: CohortIndexComponent },
       { path: 'create', component: CohortCreateComponent },
-      { path: 'detail:id', component: CohortDetailComponent },
+      { path: 'detail/:id', component: CohortDetailComponent },
       { path: 'edit/:id', component: CohortEditComponent },
       { path: 'delete/:id', component: CohortDeleteComponent },
     ]
