@@ -26,7 +26,7 @@ export class ApplicationDeleteComponent implements OnInit {
 
   onDelete() {
   this.applicationService.deleteApplication(this.application.Id).subscribe(() => {
-      this.router.navigate(['../']);
+      this.router.navigate(['/student/application/index/']);
    });
   }
 }
