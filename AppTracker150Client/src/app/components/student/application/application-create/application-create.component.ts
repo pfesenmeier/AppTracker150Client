@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { StudentService } from 'src/app/services/student-application.service';
+import { ApplicationService } from 'src/app/services/application.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,7 +13,7 @@ export class ApplicationCreateComponent implements OnInit {
 
   applicationForm : FormGroup;
 
-  constructor(private form: FormBuilder, private studentService: StudentService, private router: Router) { 
+  constructor(private form: FormBuilder, private applicationService: ApplicationService, private router: Router) { 
     this.createForm();
   }
 
@@ -38,7 +38,7 @@ export class ApplicationCreateComponent implements OnInit {
   }
 
   onSubmit() {
-    this.studentService.createStudentApplication(this.applicationForm.value).subscribe(() => {
+    this.applicationService.createStudentApplication(this.applicationForm.value).subscribe(() => {
       this.router.navigate(['student/application/index']);
     });
   }
