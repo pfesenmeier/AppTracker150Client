@@ -22,12 +22,11 @@ export class LoginComponent implements OnInit {
   createForm() {
     this.loginForm = this.form.group({
       email: new FormControl,
-      password: new FormControl
+      password: new FormControl,
     });
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
     this.authService.login(this.loginForm.value);
   }
 

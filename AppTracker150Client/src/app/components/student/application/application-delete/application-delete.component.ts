@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Application } from 'src/app/models/application';
 import { ActivatedRoute, Router } from '@angular/router';
-import { StudentService } from 'src/app/services/student-application.service';
+import { ApplicationService } from 'src/app/services/application.service';
 
 @Component({
   selector: 'app-application-delete',
@@ -13,9 +13,9 @@ export class ApplicationDeleteComponent implements OnInit {
 
   application: Application;
 
-  constructor(private activatedRoute: ActivatedRoute, private StudentService: StudentService,       private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private applicationService: ApplicationService,       private router: Router) {
     this.activatedRoute.paramMap.subscribe(params => {
-      this.StudentService.getApplication(params.get('id')).subscribe((application: Application) => {
+    applicationService.getApplication(params.get('id')).subscribe((application: Application) => {
       this.application = application;
       });
     });
@@ -25,7 +25,7 @@ export class ApplicationDeleteComponent implements OnInit {
   }
 
   onDelete() {
-    this.StudentService.deleteApplication(this.application.Id).subscribe(() => {
+  this.applicationService.deleteApplication(this.application.Id).subscribe(() => {
       this.router.navigate(['/']);
    });
   }
