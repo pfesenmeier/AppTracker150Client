@@ -10,7 +10,10 @@ import { MatToolbarModule,
          MatButtonModule,
          MatFormFieldModule,
          MatInputModule,
-         MatTableModule
+         MatTableModule,
+         MatCheckbox,
+         MatCheckboxModule,
+         MatSelectModule
 } from "@angular/material";
 
 import { AppComponent } from './app.component';
@@ -97,7 +100,6 @@ const routes = [
     StudentEditComponent,
     StudentDeleteComponent,
     ApplicationIndexComponent,
-
     
     ApplicationStudentIndexComponent,
     ApplicationCreateComponent,
@@ -122,6 +124,8 @@ const routes = [
     MatInputModule,
     MatButtonModule,
     MatTableModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [
     AuthService,

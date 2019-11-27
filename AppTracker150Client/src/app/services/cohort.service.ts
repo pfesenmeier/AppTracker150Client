@@ -32,7 +32,7 @@ export class CohortService {
   }
 
   deleteCohort(id: number) {
-    return this.http.delete(`${Api_Url}/Cohorts/${id}`, { headers: this.getHeaders() })
+    return this.http.delete(`${Api_Url}/api/cohort/${id}`, { headers: this.getHeaders() })
   }
 
 }

@@ -2,6 +2,9 @@
     <div>
         This is {{studentProfile.FirstName}} {{studentProfile.LastName}}'s dashboard!
     </div>
+    <div *ngIf="cohort;">
+        Your Class: {{cohort.Course}} Starting on: {{cohort.StartDateUtc | date: 'shortDate' }}
+    </div>
     
     <div>
         <a *ngIf="studentProfile.GitHub; else githubblock" href="https://{{studentProfile.GitHub}}">GitHub</a>

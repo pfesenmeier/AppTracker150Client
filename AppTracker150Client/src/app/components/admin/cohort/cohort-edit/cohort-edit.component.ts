@@ -13,11 +13,13 @@ export class CohortEditComponent implements OnInit {
 
   cohort: Cohort;
   editForm: FormGroup;
+  checked: Boolean;
 
   constructor(private formBuilder: FormBuilder, private cohortService: CohortService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.paramMap.subscribe(params => {
       this.cohortService.getCohort(params.get('id')).subscribe((cohort: Cohort) => {
         this.cohort = cohort;
+        this.checked = cohort.FullTime;
         this.createForm();
       });
     });
@@ -46,6 +48,8 @@ onSubmit() {
       FullTime: this.editForm.value.FullTime,
 
     };
+    console.log(UpdatedCohort);
+    
     this.cohortService.updateCohort(UpdatedCohort).subscribe(() => {
       this.router.navigate(['/cohort']);
     });
