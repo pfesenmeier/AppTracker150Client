@@ -39,7 +39,7 @@ export class ApplicationCreateComponent implements OnInit {
 
   onSubmit() {
     this.applicationService.createStudentApplication(this.applicationForm.value).subscribe(() => {
-      this.router.navigate(['/student']);
+      this.router.navigate(['student/application/index']);
     });
   }
 

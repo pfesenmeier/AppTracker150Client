@@ -29,6 +29,7 @@ export class ApplicationEditComponent implements OnInit {
   createForm() {
     this.editForm = this.formBuilder.group({
       Id: new FormControl(this.application.Id),
+      StudentId: new FormControl(this.application.StudentId),
       DateCreatedUtc: new FormControl(this.application.DateCreatedUtc),
       DateModifiedUtc: new FormControl(this.application.DateModifiedUtc),
       ApplicationStatus: new FormControl(this.application.ApplicationStatus),
@@ -37,7 +38,7 @@ export class ApplicationEditComponent implements OnInit {
       JobLink: new FormControl(this.application.JobLink),
       JobLocation: new FormControl(this.application.JobLocation),
       Research: new FormControl(this.application.Research),
-      Contact: new FormControl(this.application.Contacts),
+      Contacts: new FormControl(this.application.Contacts),
       SourceOfPosting: new FormControl(this.application.SourceOfPosting)
     });
   }
@@ -45,6 +46,7 @@ export class ApplicationEditComponent implements OnInit {
   onSubmit() {
     const updatedApplication: Application ={
       Id: this.editForm.value.Id,
+      StudentId: this.editForm.value.StudentId,
       DateCreatedUtc: this.editForm.value.DateCreatedUtc,
       DateModifiedUtc: this.editForm.value.DateCreatedUtc,
       ApplicationStatus: this.editForm.value.ApplicationStatus,
@@ -58,7 +60,7 @@ export class ApplicationEditComponent implements OnInit {
 
     };
     this.applicationService.updateApplication(updatedApplication).subscribe(() =>{
-      this.router.navigate(['/']);
+      this.router.navigate([`/student/application/detail/${updatedApplication.Id}`]);
     });
   }
 

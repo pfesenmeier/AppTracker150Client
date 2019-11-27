@@ -4,7 +4,7 @@
 <div *ngIf="application">
     <div hidden>
         <label>Id: </label>
-        <span>{{application.ApplicationId}}</span>
+        <span>{{application.Id}}</span>
     </div>
     <div hidden>
         <label>Student Id: </label>
@@ -51,7 +51,7 @@
             <span>{{application.SourceOfPosting}}</span>
     </div>
 
-   <button mat-raised-button color="accent" routerLink="/student/application/edit/{{application.ApplicationId}}">Edit</button>
+   <button mat-raised-button color="accent" routerLink="/student/application/edit/{{application.Id}}">Edit</button>
 </div>
 
 <button mat-raised-button color="primary" routerLink="student/application/index">Back to List</button>
