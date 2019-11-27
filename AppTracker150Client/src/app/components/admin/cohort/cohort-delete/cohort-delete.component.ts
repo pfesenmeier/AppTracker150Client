@@ -12,22 +12,25 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CohortDeleteComponent implements OnInit {
 
   cohort: Cohort;
-  
-  columnNames = ['Id', 'Course', 'StartDateUtc', 'EndDateUtc', 'FullTime', 'buttons'];
-  dataSource: MatTableDataSource<Cohort>;
  
   constructor(private cohortService: CohortService, private ar: ActivatedRoute, private router: Router) { 
     this.ar.paramMap.subscribe(p => {
       this.cohortService.getCohort(p.get('id')).subscribe((singleCohort: Cohort) => {
         this.cohort = singleCohort;
+        console.log(this.cohort);
       });
+
     });
   }
 
   ngOnInit() {
-    this.cohortService.getAllCohort().subscribe((cohort: Cohort[])=>{
-      this.dataSource = new MatTableDataSource<Cohort>(cohort);
-      
+
+  }
+
+  onDelete() {
+    this.cohortService.deleteCohort(this.cohort.Id).subscribe(() => {
+      this.router.navigate(["/cohort"]);
     });
   }
+
 }

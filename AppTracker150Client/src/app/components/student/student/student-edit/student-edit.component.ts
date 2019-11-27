@@ -3,6 +3,8 @@ import { StudentProfile } from 'src/app/models/StudentProfile';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { StudentProfileService } from 'src/app/services/student-profile.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Cohort } from 'src/app/models/cohort';
+import { CohortService} from 'src/app/services/cohort.service';
 
 @Component({
   selector: 'app-student-edit',
@@ -13,15 +15,23 @@ export class StudentEditComponent implements OnInit {
 
   profile: StudentProfile;
   editForm: FormGroup;
+  cohorts: Cohort[];
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private studentProfileService: StudentProfileService, private activatedRoute: ActivatedRoute) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private cohortService: CohortService, private studentProfileService: StudentProfileService, private activatedRoute: ActivatedRoute) {
+    this.cohortService.getAllCohort().subscribe((cohorts: Cohort[]) => {
+      this.cohorts = cohorts;
+      console.log(cohorts);
+      
+    })
     this.activatedRoute.paramMap.subscribe(params => {
       this.studentProfileService.getProfile().subscribe((studentProfile: StudentProfile) => {
         this.profile = studentProfile;
-        this.createForm();
+     
+          this.createForm();
+          
+        })
       })
-    })
-   }
+    }
 
   ngOnInit() {
   }
@@ -53,7 +63,7 @@ export class StudentEditComponent implements OnInit {
     console.log(updatedProfile.StudentId);
     console.log(updatedProfile.FirstName);
     this.studentProfileService.updateProfile(updatedProfile).subscribe(()=> {
-      this.router.navigate(['']);
+      this.router.navigate(['/student/index']);
     })
   }
 

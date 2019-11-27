@@ -10,7 +10,7 @@
         <ng-container matColumnDef='Id'>
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef='let cohort'>
-                <i class='material-icons' routerLink='/cohort/details/{{cohort.Id}}'>Id Number</i>
+                <i class='material-icons' routerLink='/cohort/detail/{{cohort.Id}}'>library_books</i>
             </mat-cell>
         </ng-container>
 
@@ -19,26 +19,26 @@
             <mat-cell *matCellDef='let cohort;'>{{cohort.Course}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef='S'>
-            <mat-header-cell *matHeaderCellDef>FullTime</mat-header-cell>
-            <mat-cell *matCellDef='let cohort;'>
-                <span class='star-toggle' (click)='toggleStar(cohort); cohort.FullTime = !cohort.FullTime'>
-                    <i class='material-icons' *ngIf='cohort.FullTime; else star_border'>star</i>
-                    <ng-template #star_Border><i class='material-icons'>star_border</i></ng-template>
-                </span>
-            </mat-cell>
-        </ng-container>
-
         <ng-container matColumnDef='StartDateUtc'>
             <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
-            <mat-cell *matCellDef='let cohort;'>{{note.StartDateUtc | date:'fullDate'}}</mat-cell>
+            <mat-cell *matCellDef='let cohort;'>{{cohort.StartDateUtc | date:'fullDate'}}</mat-cell>
+        </ng-container> 
+
+        <ng-container matColumnDef='EndDateUtc'>
+            <mat-header-cell *matHeaderCellDef>Date Ending</mat-header-cell>
+            <mat-cell *matCellDef='let cohort;'>{{cohort.EndDateUtc | date:'fullDate'}}</mat-cell>
+        </ng-container> 
+
+        <ng-container matColumnDef='FullTime'>
+            <mat-header-cell *matHeaderCellDef>FullTime Course</mat-header-cell>
+            <mat-cell *matCellDef='let cohort;'>{{cohort.FullTime}}</mat-cell>
         </ng-container> 
 
         <ng-container matColumnDef='buttons'>
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef='let cohort;'>
-                <i class="material-icon" routerLink="/cohort/edit/{{cohort.Id}}">edit</i>
-                <i class="material-icon">delete</i>
+                <button mat-button class="nav-btn" color="primary" type="submit"><i class="material-icon" routerLink="/cohort/edit/{{cohort.Id}}">edit</i></button>
+                    <button mat-button class="nav-btn" color="primary" type="submit"><i class="material-icon" routerLink="/cohort/delete/{{cohort.Id}}">delete</i></button>
             </mat-cell>
         </ng-container> 
     </mat-table>

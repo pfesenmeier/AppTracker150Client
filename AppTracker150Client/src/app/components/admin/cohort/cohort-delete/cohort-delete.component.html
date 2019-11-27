@@ -5,23 +5,23 @@
 <div *ngIf="cohort">
     <div>
         <label for="">Id: </label>
-        <span>{{Cohort.Id}}</span>
+        <span>{{cohort.Id}}</span>
     </div>
     <div>
         <label for="">Course: </label>
-        <span>{{Cohort.Course}}</span>
+        <span>{{cohort.Course}}</span>
     </div>
     <div>
         <label for=""> StatDateUtc: </label>
-        <span>{{Cohort.StatDateUtc}}</span>
+        <span>{{cohort.StatDateUtc}}</span>
     </div>
     <div>
         <label for="">EndDateUtc: </label>
-        <span>{{Cohort.EndDateUtc}}</span>
+        <span>{{cohort.EndDateUtc}}</span>
     </div>
     <div>
         <label for="">FullTime: </label>
-        <span>{{Cohort.FullTime}}</span>
+        <span>{{cohort.FullTime}}</span>
     </div>
 
     <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>

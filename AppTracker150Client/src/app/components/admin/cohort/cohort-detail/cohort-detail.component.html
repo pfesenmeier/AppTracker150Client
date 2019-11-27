@@ -4,26 +4,26 @@
 <div *ngIf="cohort">
     <div>
         <label>Id: </label>
-        <span>{{Cohort.Id}}</span>
+        <span>{{cohort.Id}}</span>
     </div>
     <div>
         <label>Course: </label>
-        <span>{{Cohort.Course}}</span>
+        <span>{{cohort.Course}}</span>
     </div>
     <div>
         <label> StatDateUtc: </label>
-        <span>{{Cohort.StatDateUtc}}</span>
+        <span>{{cohort.StatDateUtc}}</span>
     </div>
     <div>
         <label>EndDateUtc: </label>
-        <span>{{Cohort.EndDateUtc}}</span>
+        <span>{{cohort.EndDateUtc}}</span>
     </div>
     <div>
         <label>FullTime: </label>
-        <span>{{Cohort.FullTime}}</span>
+        <span>{{cohort.FullTime}}</span>
     </div>
 
-    <button mat-raised-button color="accent">Edit</button>
+    <button mat-raised-button color="accent" routerLink="/cohort/edit/{{cohort.Id}}">Edit</button>
 </div>
 
 <button mat-raised-button color='primary' routerLink='/cohort'>Back to List</button>

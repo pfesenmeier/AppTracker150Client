@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { StudentProfileService } from 'src/app/services/student-profile.service';
 import { Router } from '@angular/router';
+import { Cohort } from 'src/app/models/cohort';
+import { CohortService} from 'src/app/services/cohort.service';
 
 
 @Component({
@@ -12,8 +14,14 @@ import { Router } from '@angular/router';
 export class StudentCreateComponent implements OnInit {
 
   studentProfileForm: FormGroup;
+  cohorts: Cohort[];
 
-  constructor(private form: FormBuilder, private studentProfileService: StudentProfileService, private router: Router) {
+  constructor(private form: FormBuilder, private studentProfileService: StudentProfileService, private cohortService: CohortService, private router: Router) {
+    this.cohortService.getAllCohort().subscribe((cohorts: Cohort[]) => {
+      this.cohorts = cohorts;
+      console.log(cohorts);
+      
+    })
     this.createForm();
    }
 

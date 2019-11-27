@@ -18,7 +18,10 @@
         </div>
         <div>
             <mat-form-field>
-                <input matInput formControlName="CohortId" type="CohortId" value="2" required />
+              <mat-label>Cohort</mat-label>
+              <mat-select formControlName="CohortId">
+                  <mat-option *ngFor="let cohort of cohorts;" [value]="cohort.Id" >{{cohort.Course}}, Starts: {{cohort.StartDateUtc | date: 'shortDate' }} </mat-option>
+              </mat-select>
             </mat-form-field>
         </div>
         <div>
