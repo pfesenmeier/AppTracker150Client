@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Application } from 'src/app/models/Application';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { StudentService } from 'src/app/services/student-application.service';
+import { ApplicationService } from 'src/app/services/application.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -14,11 +14,11 @@ export class ApplicationEditComponent implements OnInit {
 
   application: Application;
   editForm: FormGroup;
-  applicationService: any;
 
-  constructor(private formBuilder: FormBuilder, private studentService: StudentService, private       activatedRoute: ActivatedRoute, private router: Router) {this.activatedRoute.paramMap.subscribe(params => {
+  constructor(private formBuilder: FormBuilder, private applicationService: ApplicationService, private activatedRoute: ActivatedRoute, private router: Router) {this.activatedRoute.paramMap.subscribe(params => {
          this.applicationService.getApplication(params.get('id')).subscribe((application: Application) =>{
        this.application = application;
+       console.log(application);
     this.createForm();
   });
  });

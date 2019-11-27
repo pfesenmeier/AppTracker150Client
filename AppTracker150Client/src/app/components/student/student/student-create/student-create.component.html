@@ -3,7 +3,7 @@
 
 <form (ngSubmit)="onSubmit()" [formGroup]="studentProfileForm">
     <div>
-        <div hidden>
+        <div>
             <input matInput formControlName="StudentId" type="StudentId" required />
         </div>
         <div>
@@ -18,7 +18,7 @@
         </div>
         <div>
             <mat-form-field>
-                <input matInput formControlName="CohortId" type="CohortId" value="42" required />
+                <input matInput formControlName="CohortId" type="CohortId" value="2" required />
             </mat-form-field>
         </div>
         <div>
@@ -45,4 +45,4 @@
     <button mat-button class="nav-btn" color="primary" type="submit">Create Profile</button>
 </form>
 
-<a mut-button routeLink="/student/Index">Back to Dashboard</a>
+<a mat-button routeLink="../admin/index">Back to Dashboard</a>

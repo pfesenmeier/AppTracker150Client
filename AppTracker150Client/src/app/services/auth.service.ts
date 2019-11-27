@@ -32,7 +32,7 @@ export class AuthService {
         console.log(response.IsAdmin);
         if (response.IsAdmin == true) 
         {
-            this.router.navigate(['/admin/index']);
+            this.router.navigate(['admin/index']);
         }
         else 
         {

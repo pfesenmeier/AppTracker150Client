@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StudentService } from 'src/app/services/student-application.service';
+import { ApplicationService } from 'src/app/services/application.service';
 import { Application } from 'src/app/models/Application';
 
 
@@ -14,12 +14,13 @@ export class ApplicationDetailComponent implements OnInit {
 
   application: Application;
 
-  constructor(private activatedRoute: ActivatedRoute, private studentService: StudentService) { }
+  constructor(private activatedRoute: ActivatedRoute, private applicationService: ApplicationService) { }
 
   ngOnInit() {
     this.activatedRoute.paramMap.subscribe(routeData => {
-      this.studentService.getApplication(routeData.get('id')).subscribe((application: Application) => {
+      this.applicationService.getApplication(routeData.get('id')).subscribe((application: Application) => {
         this.application = application;
+        console.log(application);
       });
     });
 

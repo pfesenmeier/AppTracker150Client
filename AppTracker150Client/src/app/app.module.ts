@@ -22,25 +22,26 @@ import { CohortCreateComponent } from './components/admin/cohort/cohort-create/c
 import { CohortDetailComponent } from './components/admin/cohort/cohort-detail/cohort-detail.component';
 import { CohortDeleteComponent } from './components/admin/cohort/cohort-delete/cohort-delete.component';
 import { CohortEditComponent } from './components/admin/cohort/cohort-edit/cohort-edit.component';
+
 import { StudentCreateComponent } from './components/student/student/student-create/student-create.component';
 import { StudentDetailComponent } from './components/student/student/student-detail/student-detail.component';
 import { StudentEditComponent } from './components/student/student/student-edit/student-edit.component';
 import { StudentDeleteComponent } from './components/admin/student/student-delete/student-delete.component';
-import { StudentService } from './services/student-application.service';
+import { ApplicationService } from './services/application.service';
 
-import { ApplicationCreateComponent } from './components/student/application/student-application-create/application-create.component';
-import { ApplicationDeleteComponent } from './components/student/application/student-application-delete/application-delete.component';
-import { ApplicationEditComponent } from './components/student/application/student-application-edit/application-edit.component';
+import { ApplicationCreateComponent } from './components/student/application/application-create/application-create.component';
+import { ApplicationDeleteComponent } from './components/student/application/application-delete/application-delete.component';
+import { ApplicationEditComponent } from './components/student/application/application-edit/application-edit.component';
 import { StudentProfileService } from './services/student-profile.service';
 import { StudentDashboardComponent } from './components/student/student-dashboard/student-dashboard.component';
 import { AdminDashboardComponent } from './components/admin/dashboard/admin-dashboard.component';
 import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
-import { ApplicationIndexComponent } from './components/admin/application/application-index/application-index.component';
-import { ApplicationDetailComponent } from './components/application/application-detail.component';
+import { ApplicationIndexComponent } from './components/student/application/application-index/application-index.component';
+import { ApplicationDetailComponent } from './components/student/application/application-detail/application-detail.component';
 
 import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
-import { StudentApplicationIndexComponent } from './components/student/application/student-application-index/student-application-index.component';
+
 import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
 import { AdminStudentService } from './services/admin-student.service';
 
@@ -58,8 +59,6 @@ const routes = [
     ]
   },
   { path: 'index', component: IndexComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegistrationComponent },
 
   { path: 'student', children: [
      { path: 'index', component: StudentDashboardComponent },
@@ -67,9 +66,9 @@ const routes = [
      { path: 'edit/:id', component: StudentEditComponent },
      
      {path: 'application', children:[
-       {path:'index', component: StudentApplicationIndexComponent},
-       {path:'create', component: ApplicationCreateComponent},
-       {path: 'detail', component: ApplicationDetailComponent},
+       {path: 'index', component: ApplicationIndexComponent},
+       {path: 'create', component: ApplicationCreateComponent},
+       {path: 'detail/:id', component: ApplicationDetailComponent},
        {path: 'edit/:id', component: ApplicationEditComponent},
        {path: 'delete/:id', component: ApplicationDeleteComponent},
       ]}
@@ -78,7 +77,7 @@ const routes = [
     { path: 'index', component: AdminDashboardComponent },
     { path: 'student', component: AdminStudentIndexComponent }
   ]},
-  { path: '**', component: IndexComponent }
+  { path: '**', component: RegistrationComponent }
 ];
 
 
@@ -97,7 +96,7 @@ const routes = [
     StudentDetailComponent,
     StudentEditComponent,
     StudentDeleteComponent,
-    StudentApplicationIndexComponent,
+    ApplicationIndexComponent,
 
     
     ApplicationStudentIndexComponent,
@@ -108,10 +107,8 @@ const routes = [
     AdminDashboardComponent,
     AdminStudentIndexComponent,
     StudentDashboardComponent,
-    StudentApplicationIndexComponent,
     IndexComponent,
     LoginComponent,
-    ApplicationDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -128,7 +125,7 @@ const routes = [
   ],
   providers: [
     AuthService,
-    StudentService,
+    ApplicationService,
     StudentProfileService,
     AdminStudentService
   ],

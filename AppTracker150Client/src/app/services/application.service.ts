@@ -6,7 +6,7 @@ const Api_Url = 'https://localhost:44302'
 @Injectable({
   providedIn: 'root'
 })
-export class StudentService {
+export class ApplicationService {
   
 
   constructor(private http: HttpClient) { }
@@ -21,7 +21,7 @@ export class StudentService {
   }
 
   getApplication(id){
-    return this.http.get(`${Api_Url}/Student/Applications/${id}`, {headers: this.getHeaders() });
+    return this.http.get(`${Api_Url}/Student/Applications?id=${id}`, {headers: this.getHeaders() });
   }
 
   updateApplication(application: Application) {

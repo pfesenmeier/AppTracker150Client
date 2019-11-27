@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import { StudentProfileService } from 'src/app/services/student-profile.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-student-create',
   templateUrl: './student-create.component.html',
@@ -33,9 +34,9 @@ export class StudentCreateComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.studentProfileForm.value)
-    this.studentProfileService.createStudentProfile(this.studentProfileForm.value).subscribe(()=> {
-      this.router.navigate(['/student/index']);
+    this.studentProfileService.createStudentProfile(this.studentProfileForm.value).subscribe(() => {
+     this.router.navigate(['/']);
+    
     })
   }
 

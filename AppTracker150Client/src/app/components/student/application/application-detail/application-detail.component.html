@@ -1,22 +1,22 @@
 <h1>Details</h1>
 <hr />
 
-<div *ngIf="Application">
-    <div>
+<div *ngIf="application">
+    <div hidden>
         <label>Id: </label>
-        <span>{{application.Id}}</span>
+        <span>{{application.ApplicationId}}</span>
     </div>
-    <div>
+    <div hidden>
         <label>Student Id: </label>
         <span>{{application.StudentId}}</span>
     </div>
     <div>
             <label>Created At: </label>
-            <span>{{application.CreatedUtc | date: 'fullDate'}}</span>
+            <span>{{application.DateCreatedUtc | date: 'fullDate'}}</span>
     </div>
     <div>
             <label>Last Modified: </label>
-            <span>{{application.ModifiedUtc | date: 'fullDate'}}</span>
+            <span>{{application.DateModifiedUtc | date: 'fullDate'}}</span>
     </div>
     <div>
             <label>Application Status: </label>
@@ -40,18 +40,18 @@
     </div>
     <div>
             <label>Research: </label>
-            <span>{{application.Researc}}</span>
+            <span>{{application.Research}}</span>
     </div>
     <div>
             <label>Contact: </label>
-            <span>{{application.Contact}}</span>
+            <span>{{application.Contacts}}</span>
     </div>
     <div>
             <label>Source of Posting: </label>
             <span>{{application.SourceOfPosting}}</span>
     </div>
 
-   <button mat-raised-button color="accent">Edit</button>
+   <button mat-raised-button color="accent" routerLink="/student/application/edit/{{application.ApplicationId}}">Edit</button>
 </div>
 
 <button mat-raised-button color="primary" routerLink="student/application/index">Back to List</button>
