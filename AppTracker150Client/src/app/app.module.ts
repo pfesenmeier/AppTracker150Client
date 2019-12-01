@@ -13,7 +13,9 @@ import { MatToolbarModule,
          MatTableModule,
          MatCheckbox,
          MatCheckboxModule,
-         MatSelectModule
+         MatSelectModule,
+         MatPaginatorModule,
+         MatSortModule
 } from "@angular/material";
 
 import { AppComponent } from './app.component';
@@ -42,11 +44,9 @@ import { IndexComponent } from './components/index/index.component';
 import { LoginComponent } from './components/login/login.component';
 import { ApplicationIndexComponent } from './components/student/application/application-index/application-index.component';
 import { ApplicationDetailComponent } from './components/student/application/application-detail/application-detail.component';
-
-import { ApplicationStudentIndexComponent } from './components/admin/application/application-student-index/application-student-index.component';
-
 import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
 import { AdminStudentService } from './services/admin-student.service';
+import { AdminApplicationIndexComponent } from './components/admin/application/application-index/admin-application-index.component';
 
 
 const routes = [
@@ -78,9 +78,10 @@ const routes = [
   ]},
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
-    { path: 'student', component: AdminStudentIndexComponent }
+    { path: 'student', component: AdminStudentIndexComponent },
+    { path: 'application', component: AdminApplicationIndexComponent }
   ]},
-  { path: '**', component: RegistrationComponent }
+  { path: '**', component: IndexComponent }
 ];
 
 
@@ -100,14 +101,13 @@ const routes = [
     StudentEditComponent,
     StudentDeleteComponent,
     ApplicationIndexComponent,
-    
-    ApplicationStudentIndexComponent,
     ApplicationCreateComponent,
     ApplicationDeleteComponent,
     ApplicationDetailComponent,
     ApplicationEditComponent,
     AdminDashboardComponent,
     AdminStudentIndexComponent,
+    AdminApplicationIndexComponent,
     StudentDashboardComponent,
     IndexComponent,
     LoginComponent,
@@ -125,7 +125,9 @@ const routes = [
     MatButtonModule,
     MatTableModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [
     AuthService,
