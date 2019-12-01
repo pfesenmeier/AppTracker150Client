@@ -12,10 +12,17 @@
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef="let application;">
                 <i class="material-icons" routerLink="../detail/{{application.ApplicationId}}">library_books</i>
-                <i class="material-icons" routerLink="/application/edit/{{application.Id}}">edit</i>
-                <i class="material-icons" routerLink="/application/delete{{application.Id}}">delete</i>
+                <i class="material-icons" routerLink="../edit/{{application.ApplicationId}}">edit</i>
+                <i class="material-icons" routerLink="../delete/{{application.ApplicationId}}">delete</i>
             </mat-cell>
         </ng-container>
+
+        <ng-container matColumnDef="PositionName">
+                <mat-header-cell *matHeaderCellDef>Position Name</mat-header-cell>
+                <mat-cell *matCellDef="let application;">{{application.PostitionName}}</mat-cell>
+        </ng-container>
+
+      
 
         <ng-container matColumnDef="DateCreatedUtc">
             <mat-header-cell *matHeaderCellDef>Date Added</mat-header-cell>
@@ -32,9 +39,5 @@
                 <mat-cell *matCellDef="let application;">{{application.CompanyName}}</mat-cell>
         </ng-container>
 
-        <ng-container matColumnDef="PositionName">
-                <mat-header-cell *matHeaderCellDef>Position Name</mat-header-cell>
-                <mat-cell *matCellDef="let application;">{{application.PositionName}}</mat-cell>
-        </ng-container>
     </mat-table>
 </div>
