@@ -30,17 +30,23 @@ export class AuthService {
       this.isLoggedIn.next(true);
       this.currentUser().subscribe((response: UserInfo) => {
         console.log(response.IsAdmin);
-        if (response.IsAdmin == true) 
-        {
-            this.router.navigate(['admin/index']);
-        }
-        else 
-        {
-          this.router.navigate(['student/index']);
-        }
+        localStorage.setItem('IsAdmin', `${response.IsAdmin}`)
+        this.routeToDashboard();
       });
     });
     
+  }
+
+  routeToDashboard() {
+    if (localStorage.getItem('IsAdmin') == "true") {
+      this.router.navigate(['admin/index']);
+    }
+    else if (localStorage.getItem('IsAdmin') == "false") {
+      this.router.navigate(['student/index']);
+    }
+    else {
+      this.router.navigate(['login']);
+    }
   }
 
   currentUser(): Observable<Object> {
