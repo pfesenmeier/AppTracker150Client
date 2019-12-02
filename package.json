@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --prod",
-    "start": "serve -s dist/appTracker150Client"
+    "start": "serve -s dist/AppTracker150Client"
   },
   "private": true,
   "dependencies": {
