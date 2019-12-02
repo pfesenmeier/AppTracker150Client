@@ -6,3 +6,21 @@ body, html {
     margin: 0;
     font-family: 'Roboto', 'Arial', sans-serif;
 }
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+    background-color: #348db9;
+}
+
+h1 {
+    text-align: center;
+    
+}
+
+div {
+    text-align: center;
+    align-items: center;
+}
+
+.mat-button {
+    background-color: #348db9;
+    
+}

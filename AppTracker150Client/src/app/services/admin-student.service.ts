@@ -16,6 +16,10 @@ export class AdminStudentService {
       return this._http.get(`${Api_Url}/Admin/Students`, { headers: this.getHeaders()})
     }
 
+    getApplications(){
+      return this._http.get(`${Api_Url}/Admin/Applications`, { headers: this.getHeaders() })
+    }
+
   // getProfile(){
   //   return this._http.get(`${Api_Url}/Student/Profile`, { headers: this.getHeaders() })
   // }
