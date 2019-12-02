@@ -1,4 +1,4 @@
-<h1>Create a Profile</h1>
+<div><h1>Create a Profile</h1></div>
 <hr />
 
 <form (ngSubmit)="onSubmit()" [formGroup]="studentProfileForm">
@@ -45,7 +45,7 @@
             </mat-form-field>
         </div>
     </div>
-    <button mat-button class="nav-btn" color="primary" type="submit">Create Profile</button>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Profile</button>
 </form>
 
-<a mat-button routerLink="../index">Back to Dashboard</a>
+<a mat-raised-button routerLink="../index">Back to Dashboard</a>
