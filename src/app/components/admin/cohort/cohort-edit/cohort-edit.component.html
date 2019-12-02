@@ -1,0 +1,33 @@
+<h1>Edit a Note</h1>
+<hr />
+
+<div *ngIf='cohort'>
+    <form (ngSubmit)='onSubmit()' [formGroup]='editForm'>
+        <div>
+            <div hidden>
+                <input matInput placeholder="Id" formControlName='Id' type="number" required [value]='cohort.Id' />
+            </div>
+            <div hidden>
+                    <input matInput placeholder="Course" formControlName='Course' type="text" required [value]='cohort.Course' />
+                </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="StartDateUtc" formControlName='StartDateUtc' type="text" required [value]='cohort.StartDateUtc' />
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input matInput placeholder="EndDateUtc" formControlName='EndDateUtc' type="text" required [value]='cohort.EndDateUtc' />
+                </mat-form-field>
+            </div>
+            <div>
+                <section>
+                    <mat-checkbox formControlName="FullTime" [(ngModel)]="checked">FullTime</mat-checkbox>
+                </section>
+            </div>
+        </div> 
+        <button mat-raised-button class="nav-btn" color='primary' type="submit">Save</button>
+    </form>
+    </div>
+
+    <a mat-button routerLink="/cohort">Back to List</a>

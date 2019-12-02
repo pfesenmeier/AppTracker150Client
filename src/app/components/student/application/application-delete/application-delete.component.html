@@ -1,0 +1,61 @@
+<h1>Delete Application</h1>
+<h4>Are you sure you want to delete this application?</h4>
+<hr />
+
+<div *ngIf="application">
+    <div>
+        <label>Id: </label>
+        <span>{{application.Id}}</span>
+    </div>
+    <div>
+        <label>Student Id: </label>
+        <span>{{application.StudentId}}</span>
+    </div>
+    <div>
+            <label>Created At: </label>
+            <span>{{application.DateCreatedUtc | date: 'fullDate'}}</span>
+    </div>
+    <div>
+            <label>Last Modified: </label>
+            <span>{{application.DateModifiedUtc | date: 'fullDate'}}</span>
+    </div>
+    <div>
+            <label>Application Status: </label>
+            <span>{{application.ApplicationStatus}}</span>
+    </div>
+    <div>
+            <label>Company Name: </label>
+            <span>{{application.CompanyName}}</span>
+    </div>
+    <div>
+            <label>Position Name: </label>
+            <span>{{application.PositionName}}</span>
+    </div>
+    <div>
+            <label>Job Link: </label>
+            <span>{{application.JobLink}}</span>
+    </div>
+    <div>
+            <label>Job Location: </label>
+            <span>{{application.JobLocation}}</span>
+    </div>
+    <div>
+            <label>Research: </label>
+            <span>{{application.Research}}</span>
+    </div>
+    <div>
+            <label>Contact: </label>
+            <span>{{application.Contacts}}</span>
+    </div>
+    <div>
+            <label>Source of Posting: </label>
+            <span>{{application.SourceOfPosting}}</span>
+    </div>
+
+   <button mat-raised-button color="warn" (click)="onDelete()">Delete</button>
+</div>
+
+<button mat-raised-button color="primary" routerLink="/student/application/index">Back to List</button>
+
+
+
