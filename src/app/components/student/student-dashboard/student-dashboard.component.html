@@ -1,4 +1,4 @@
-<div *ngIf="studentProfile; else elseblock;">
+<div *ngIf="studentProfile; else elseBlock">
     <div class="mat-headline">
         This is {{studentProfile.FirstName}} {{studentProfile.LastName}}'s dashboard!
     </div>
@@ -40,6 +40,6 @@
         </div>
 </div>
 
-<ng-template #elseblock>
+<ng-template #elseBlock>
     <a mat-raised-button color="warn" routerLink="../create">Create a Profile!</a>
 </ng-template>
