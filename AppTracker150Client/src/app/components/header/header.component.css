@@ -4,11 +4,14 @@
 
 .nav-btn {
     margin-right: 0.5em;
-    background-color: #ff6866;
+    background-color: #348db9;
 }
 
 .padding {
     padding-left: 15%;
     padding-right: 15%;
     background-color: 0;
+}
+.header {
+    background-color: #ff6866;
 }
