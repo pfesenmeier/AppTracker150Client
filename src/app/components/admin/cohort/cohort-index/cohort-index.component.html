@@ -1,5 +1,5 @@
 <h1>Eleven Fifty Cohorts</h1>
-<a mat-raised-button color='primary' routerLink='/cohort/create'>Create New</a>
+<a mat-raised-button color='black' routerLink='/cohort/create'>Create New</a>
 <hr />
 
 <div >
@@ -37,11 +37,13 @@
         <ng-container matColumnDef='buttons'>
             <mat-header-cell *matHeaderCellDef></mat-header-cell>
             <mat-cell *matCellDef='let cohort;'>
-                <button mat-button class="nav-btn" color="primary" type="submit"><i class="material-icon" routerLink="/cohort/edit/{{cohort.Id}}">edit</i></button>
-                    <button mat-button class="nav-btn" color="primary" type="submit"><i class="material-icon" routerLink="/cohort/delete/{{cohort.Id}}">delete</i></button>
+               <div><button mat-raised-button class="nav-btn" color="#fff" type="submit"><i class="material-icon" routerLink="/cohort/edit/{{cohort.Id}}">edit</i></button>
+               </div>
+               <div><button mat-raised-button class="nav-btn" color="#fff" type="submit"><i class="material-icon" routerLink="/cohort/delete/{{cohort.Id}}">delete</i></button>
+               </div>
             </mat-cell>
         </ng-container> 
     </mat-table>
 </div>
 
-<a mat-button routerLink="/admin/index">Back to Dashboard</a>
+<a mat-raised-button routerLink="/admin/index">Back to Dashboard</a>
