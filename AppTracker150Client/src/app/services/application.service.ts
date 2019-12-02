@@ -28,8 +28,8 @@ export class ApplicationService {
     return this.http.put(`${Api_Url}/Student/Applications`, application, {headers: this.getHeaders() });
   }
 
-  deleteApplication(id: number) {
-    return this.http.delete(`${Api_Url}/Student/Applications/${id}`, { headers: this.getHeaders() });
+  deleteApplication(id) {
+    return this.http.delete(`${Api_Url}/Student/Applications?id=${id}`, { headers: this.getHeaders() });
   }
   
 
