@@ -1,0 +1,44 @@
+
+
+<div><h1>Applications</h1></div>
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+<div class="mat-elevation-z8">
+<table mat-table matSort [dataSource]="dataSource" >
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="PositionName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Position </th>
+      <td mat-cell *matCellDef="let element"> {{element.PositionName}} </td>
+    </ng-container>
+  
+    <!-- Company Column -->
+    <ng-container matColumnDef="CompanyName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Company </th>
+      <td mat-cell *matCellDef="let element"> {{element.CompanyName}} </td>
+    </ng-container>
+  
+    <!-- Status Column -->
+    <ng-container matColumnDef="ApplicationStatus">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+      <td mat-cell *matCellDef="let element"> {{element.ApplicationStatus}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="DateCreatedUtc">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.DateCreatedUtc | date: 'shortDate' }} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="columnNames"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnNames;"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[10,20,30]"
+  showFirstLastButtons></mat-paginator>
+  </div>
+  <br />
+  <a mat-raised-button routerLink="/admin/index">Back to Dashboard</a>

@@ -47,6 +47,7 @@ import { ApplicationDetailComponent } from './components/student/application/app
 import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
 import { AdminStudentService } from './services/admin-student.service';
 import { AdminApplicationIndexComponent } from './components/admin/application/application-index/admin-application-index.component';
+import { AdminStudentDetailComponent } from './components/admin/student/admin-student-detail/admin-student-detail.component';
 
 
 const routes = [
@@ -111,6 +112,7 @@ const routes = [
     StudentDashboardComponent,
     IndexComponent,
     LoginComponent,
+    AdminStudentDetailComponent,
   ],
   imports: [
     BrowserModule,
