@@ -17,4 +17,8 @@ export class HeaderComponent implements OnInit {
     this.authService.routeToDashboard();
   }
 
+  Logout(){
+    this.authService.logout();
+  }
+
 }

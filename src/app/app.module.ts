@@ -53,7 +53,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 const routes = [
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent },
-  {path: 'Logout', component: LogoutComponent },
+  
   {
     path: 'cohort', children: [
       { path: '', component: CohortIndexComponent },
@@ -113,7 +113,7 @@ const routes = [
     StudentDashboardComponent,
     IndexComponent,
     LoginComponent,
-    LogoutComponent,
+    
   ],
   imports: [
     BrowserModule,
