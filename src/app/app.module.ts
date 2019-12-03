@@ -79,7 +79,9 @@ const routes = [
   ]},
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
-    { path: 'student', component: AdminStudentIndexComponent },
+    { path: 'student', component: AdminStudentIndexComponent, children: [
+      { path: 'detail/:id', component: AdminStudentDetailComponent }
+    ] },
     { path: 'application', component: AdminApplicationIndexComponent }
   ]},
   { path: '**', component: IndexComponent }

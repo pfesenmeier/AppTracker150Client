@@ -1,5 +1,5 @@
 import { Cohort } from './Cohort';
-import { Application } from './Application';
+import { AdminApplicationView } from './AdminApplicationView';
 
 export interface AdminStudentProfile {
     StudentId?: number;
@@ -12,5 +12,5 @@ export interface AdminStudentProfile {
     GitHub?: string;
     UserName?: string;
     FullTimeOrPartTime: string;
-    Applications: Application[];
+    Applications: AdminApplicationView[];
 }
