@@ -5,6 +5,7 @@ import { AdminApplicationView } from 'src/app/models/AdminApplicationView';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminStudentProfile } from 'src/app/models/AdminStudentProfile';
+import { not } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-admin-student-detail',
@@ -15,7 +16,7 @@ export class AdminStudentDetailComponent implements OnInit {
 
   columnNames: string[] = ['PositionName', 'CompanyName', 'ApplicationStatus', 'DateCreatedUtc','MoreInfo']
   dataSource: MatTableDataSource<AdminApplicationView>; 
-  profile: AdminStudentProfile;
+  studentProfile: AdminStudentProfile;
 
   @ViewChild(MatPaginator, {static: true})
   paginator: MatPaginator;
@@ -32,8 +33,12 @@ export class AdminStudentDetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(routeData => {
       console.log(routeData);
       this.adminstudentService.getStudentProfile(routeData.get('id')).subscribe((student: AdminStudentProfile) => {
-        this.dataSource = new MatTableDataSource<AdminApplicationView>(student.Applications);
-        this.profile = student;
+       console.log(student)
+        if(student.Applications != null && student.Applications != [])
+        {
+          this.dataSource = new MatTableDataSource<AdminApplicationView>(student.Applications);
+        }
+        this.studentProfile = student;
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
         console.log(student);
