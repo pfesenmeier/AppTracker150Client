@@ -28,6 +28,7 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
+      //communicate to header.component.ts
       this.currentUser().subscribe((response: UserInfo) => {
         console.log(response.IsAdmin);
         localStorage.setItem('IsAdmin', `${response.IsAdmin}`)
@@ -36,6 +37,12 @@ export class AuthService {
     });
     
   }
+
+  watchLogin(): Observable<any> {
+    return this.isLoggedIn.asObservable();
+  }
+
+
 
   routeToDashboard() {
     if (localStorage.getItem('IsAdmin') == "true") {

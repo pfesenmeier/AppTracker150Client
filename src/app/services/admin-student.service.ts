@@ -14,7 +14,7 @@ export class AdminStudentService {
       return this._http.get(`${APIURL}/Admin/Students`, { headers: this.getHeaders()})
     }
 
-    getStudentProfile(id:string){
+    getStudentProfile(id){
       return this._http.get(`${APIURL}/Admin/Students?id=${id}`, { headers: this.getHeaders()})
     }
 

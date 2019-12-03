@@ -15,7 +15,8 @@ import { MatToolbarModule,
          MatCheckboxModule,
          MatSelectModule,
          MatPaginatorModule,
-         MatSortModule
+         MatSortModule,
+         MatSnackBarModule
 } from "@angular/material";
 
 import { AppComponent } from './app.component';
@@ -49,6 +50,8 @@ import { AdminStudentService } from './services/admin-student.service';
 import { AdminApplicationIndexComponent } from './components/admin/application/application-index/admin-application-index.component';
 import { AdminStudentDetailComponent } from './components/admin/student/admin-student-detail/admin-student-detail.component';
 import { AdminApplicationDetailComponent } from './components/admin/application/admin-application-detail/admin-application-detail.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AdminGuard } from './guards/admin.guard';
 
 
 
@@ -57,7 +60,7 @@ const routes = [
   {path: 'login', component: LoginComponent },
   
   {
-    path: 'cohort', children: [
+    path: 'cohort', canActivate: [AuthGuard], children: [
       { path: '', component: CohortIndexComponent },
       { path: 'create', component: CohortCreateComponent },
       { path: 'detail/:id', component: CohortDetailComponent },
@@ -67,12 +70,12 @@ const routes = [
   },
   { path: 'index', component: IndexComponent },
 
-  { path: 'student', children: [
+  { path: 'student', canActivate: [AuthGuard], children: [
      { path: 'index', component: StudentDashboardComponent },
      { path: 'create', component: StudentCreateComponent },
      { path: 'edit/:id', component: StudentEditComponent },
      
-     {path: 'application', children:[
+     {path: 'application', canActivate: [AdminGuard], children:[
        {path: 'index', component: ApplicationIndexComponent},
        {path: 'create', component: ApplicationCreateComponent},
        {path: 'detail/:id', component: ApplicationDetailComponent},
@@ -137,13 +140,16 @@ const routes = [
     MatCheckboxModule,
     MatSelectModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthService,
     ApplicationService,
     StudentProfileService,
-    AdminStudentService
+    AdminStudentService,
+    AuthGuard,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })
