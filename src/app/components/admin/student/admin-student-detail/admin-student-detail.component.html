@@ -1,6 +1,15 @@
 
 <div><h1>StudentInfo</h1></div>
-<p>Insert Info Here (look at console logs)</p>
+
+<div *ngIf="studentProfile">
+  <div mat-row >
+    <a href="{{ studentProfile.LinkedInLink }}"><img class="icon" src="../../../../../assets/linkedin icon.png" /></a>
+    <a href="{{ studentProfile.GitHub }}"><img class="icon" src="../../../../../assets/github.png" /></a>
+    <a href="{{ studentProfile.ResumeLink }}"><img class="icon" src="../../../../../assets/resume.jpg" /></a>
+    <a href="{{ studentProfile.PortfolioLink }}"><img class="icon" src="../../../../../assets/portfolio.png "/></a>
+</div>
+
+</div>
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
