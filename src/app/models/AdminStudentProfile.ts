@@ -12,5 +12,5 @@ export interface AdminStudentProfile {
     GitHub?: string;
     UserName?: string;
     FullTimeOrPartTime: string;
-    Applications: AdminApplicationView[];
+    Applications?: AdminApplicationView[];
 }

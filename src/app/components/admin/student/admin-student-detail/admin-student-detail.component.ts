@@ -32,8 +32,8 @@ export class AdminStudentDetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(routeData => {
       console.log(routeData);
       this.adminstudentService.getStudentProfile(routeData.get('id')).subscribe((student: AdminStudentProfile) => {
-       console.log(student)
-        if(student.Applications != null && student.Applications != [])
+        console.log(student)
+        if(student.Applications != null)
         {
           this.dataSource = new MatTableDataSource<AdminApplicationView>(student.Applications);
         }
