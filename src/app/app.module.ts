@@ -74,8 +74,7 @@ const routes = [
      { path: 'index', component: StudentDashboardComponent },
      { path: 'create', component: StudentCreateComponent },
      { path: 'edit/:id', component: StudentEditComponent },
-     
-     {path: 'application', canActivate: [AdminGuard], children:[
+     {path: 'application', children:[
        {path: 'index', component: ApplicationIndexComponent},
        {path: 'create', component: ApplicationCreateComponent},
        {path: 'detail/:id', component: ApplicationDetailComponent},
