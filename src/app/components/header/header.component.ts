@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,14 +8,21 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  isLoggedIn: boolean;
+
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.watchLogin().subscribe((isLoggedIn: boolean) => {
+      this.isLoggedIn = isLoggedIn;
+      console.log(this.isLoggedIn);
+    })  
   }
 
   DashBoard() {
     this.authService.routeToDashboard();
   }
+
 
   Logout(){
     this.authService.logout();

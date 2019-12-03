@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { SnackBarService } from 'src/app/services/snack-bar.service';
 
 @Component({
   selector: 'app-registration',
@@ -12,7 +13,7 @@ export class RegistrationComponent implements OnInit {
 
   public registerForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
+  constructor(private snackBarService: SnackBarService ,private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
     this.createForm();
   }
 
@@ -31,7 +32,11 @@ export class RegistrationComponent implements OnInit {
   onSubmit() {
     console.log(this.registerForm.value);
     this.authService.register(this.registerForm.value).subscribe(()=>{
-      this.router.navigate(['admin/index']);
+      this.router.navigate(['admin/index']).then((navigated:boolean) =>{
+        if (navigated) {
+          this.snackBarService.openSnackBar("Student Created!",'Close', 50000);
+        }
+      });
     });
   }
 
