@@ -13,7 +13,7 @@ import { AdminStudentProfile } from 'src/app/models/AdminStudentProfile';
 })
 export class AdminStudentDetailComponent implements OnInit {
 
-  columnNames: string[] = ['PositionName', 'CompanyName', 'ApplicationStatus', 'DateCreatedUtc']
+  columnNames: string[] = ['PositionName', 'CompanyName', 'ApplicationStatus', 'DateCreatedUtc','MoreInfo']
   dataSource: MatTableDataSource<AdminApplicationView>; 
   profile: AdminStudentProfile;
 

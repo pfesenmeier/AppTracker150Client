@@ -1,0 +1,57 @@
+<div><h1>Details</h1></div>
+<hr />
+
+<div *ngIf="application">
+    <div hidden>
+        <label>Id: </label>
+        <span>{{application.Id}}</span>
+    </div>
+    <div hidden>
+        <label>Student Id: </label>
+        <span>{{application.StudentId}}</span>
+    </div>
+    <div>
+            <label>Created At: </label>
+            <span>{{application.DateCreatedUtc | date: 'fullDate'}}</span>
+    </div>
+    <div>
+            <label>Last Modified: </label>
+            <span>{{application.DateModifiedUtc | date: 'fullDate'}}</span>
+    </div>
+    <div>
+            <label>Application Status: </label>
+            <span>{{application.ApplicationStatus}}</span>
+    </div>
+    <div>
+            <label>Company Name: </label>
+            <span>{{application.CompanyName}}</span>
+    </div>
+    <div>
+            <label>Position Name: </label>
+            <span>{{application.PositionName}}</span>
+    </div>
+    <div>
+            <label>Job Link: </label>
+            <span>{{application.JobLink}}</span>
+    </div>
+    <div>
+            <label>Job Location: </label>
+            <span>{{application.JobLocation}}</span>
+    </div>
+    <div>
+            <label>Research: </label>
+            <span>{{application.Research}}</span>
+    </div>
+    <div>
+            <label>Contact: </label>
+            <span>{{application.Contacts}}</span>
+    </div>
+    <div>
+            <label>Source of Posting: </label>
+            <span>{{application.SourceOfPosting}}</span>
+    </div>
+
+</div>
+
+<a mat-raised-button routerLink="/student/application/index">To All Apps TODO</a>
+<a mat-raised-button routerLink="">To Student TODO</a>

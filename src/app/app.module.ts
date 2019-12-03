@@ -48,6 +48,7 @@ import { AdminStudentIndexComponent } from './components/admin/student/admin-stu
 import { AdminStudentService } from './services/admin-student.service';
 import { AdminApplicationIndexComponent } from './components/admin/application/application-index/admin-application-index.component';
 import { AdminStudentDetailComponent } from './components/admin/student/admin-student-detail/admin-student-detail.component';
+import { AdminApplicationDetailComponent } from './components/admin/application/admin-application-detail/admin-application-detail.component';
 
 
 const routes = [
@@ -81,7 +82,8 @@ const routes = [
     { path: 'index', component: AdminDashboardComponent },
     { path: 'student', component: AdminStudentIndexComponent },
     { path: 'detail/:id', component: AdminStudentDetailComponent },
-    { path: 'application', component: AdminApplicationIndexComponent }
+    { path: 'application', component: AdminApplicationIndexComponent },
+    {path: 'app/:studentid/:id', component: AdminApplicationDetailComponent }
   ]},
   { path: '**', component: IndexComponent }
 ];
@@ -114,6 +116,7 @@ const routes = [
     IndexComponent,
     LoginComponent,
     AdminStudentDetailComponent,
+    AdminApplicationDetailComponent,
   ],
   imports: [
     BrowserModule,

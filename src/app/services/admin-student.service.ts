@@ -22,6 +22,10 @@ export class AdminStudentService {
       return this._http.get(`${APIURL}/Admin/Applications`, { headers: this.getHeaders() })
     }
 
+    getApplicationsByStudentId(id,studentId){
+      return this._http.get(`${APIURL}/Admin/Applications?id=${id}&studentId=${studentId}`, { headers: this.getHeaders() })
+    }
+
   private getHeaders(){
     return new HttpHeaders().set('Authorization', `bearer ${localStorage.getItem('id_token')}`);
   }
