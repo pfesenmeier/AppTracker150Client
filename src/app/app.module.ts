@@ -53,9 +53,11 @@ import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 
 
+
 const routes = [
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent },
+  
   {
     path: 'cohort', canActivate: [AuthGuard], children: [
       { path: '', component: CohortIndexComponent },
@@ -120,6 +122,7 @@ const routes = [
     LoginComponent,
     AdminStudentDetailComponent,
     AdminApplicationDetailComponent,
+
   ],
   imports: [
     BrowserModule,
