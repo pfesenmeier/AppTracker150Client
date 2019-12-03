@@ -47,7 +47,9 @@ import { ApplicationDetailComponent } from './components/student/application/app
 import { AdminStudentIndexComponent } from './components/admin/student/admin-student-index/admin-student-index.component';
 import { AdminStudentService } from './services/admin-student.service';
 import { AdminApplicationIndexComponent } from './components/admin/application/application-index/admin-application-index.component';
-import { LogoutComponent } from './components/logout/logout.component';
+import { AdminStudentDetailComponent } from './components/admin/student/admin-student-detail/admin-student-detail.component';
+import { AdminApplicationDetailComponent } from './components/admin/application/admin-application-detail/admin-application-detail.component';
+
 
 
 const routes = [
@@ -81,7 +83,10 @@ const routes = [
   { path: 'admin', children: [
     { path: 'index', component: AdminDashboardComponent },
     { path: 'student', component: AdminStudentIndexComponent },
-    { path: 'application', component: AdminApplicationIndexComponent }
+    { path: 'detail/:id', component: AdminStudentDetailComponent },
+    { path: 'application', component: AdminApplicationIndexComponent },
+    { path: 'app/:studentid/:id', component: AdminApplicationDetailComponent },
+    { path: 'delete/:id', component: StudentDeleteComponent }
   ]},
   { path: '**', component: IndexComponent }
 ];
@@ -113,7 +118,9 @@ const routes = [
     StudentDashboardComponent,
     IndexComponent,
     LoginComponent,
-    
+    AdminStudentDetailComponent,
+    AdminApplicationDetailComponent,
+
   ],
   imports: [
     BrowserModule,

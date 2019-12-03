@@ -1,1 +1,4 @@
-<p>student-delete works!</p>
+<h1>Are you sure you want to delete this student?</h1>
+
+<p *ngIf="user">{{user.UserName}}</p>
+<button mat-button color="warn" (click)="onDelete()">Delete</button>

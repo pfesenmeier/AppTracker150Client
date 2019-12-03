@@ -11,7 +11,7 @@ import { AdminStudentService } from 'src/app/services/admin-student.service';
 })
 export class AdminStudentIndexComponent implements OnInit {
 
-  columnNames = ['FirstName', 'LastName', 'UserName'];
+  columnNames = ['FirstName', 'LastName', 'UserName', 'Actions'];
   dataSource: MatTableDataSource<StudentProfile>;
 
   constructor(private adminstudentService: AdminStudentService) { }
