@@ -5,7 +5,6 @@ import { AdminApplicationView } from 'src/app/models/AdminApplicationView';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminStudentProfile } from 'src/app/models/AdminStudentProfile';
-import { not } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-admin-student-detail',
@@ -33,8 +32,8 @@ export class AdminStudentDetailComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe(routeData => {
       console.log(routeData);
       this.adminstudentService.getStudentProfile(routeData.get('id')).subscribe((student: AdminStudentProfile) => {
-       console.log(student)
-        if(student.Applications != null && student.Applications != [])
+        console.log(student)
+        if(student.Applications != null)
         {
           this.dataSource = new MatTableDataSource<AdminApplicationView>(student.Applications);
         }

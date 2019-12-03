@@ -15,7 +15,8 @@ import { MatToolbarModule,
          MatCheckboxModule,
          MatSelectModule,
          MatPaginatorModule,
-         MatSortModule
+         MatSortModule,
+         MatSnackBarModule
 } from "@angular/material";
 
 import { AppComponent } from './app.component';
@@ -139,7 +140,8 @@ const routes = [
     MatCheckboxModule,
     MatSelectModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthService,

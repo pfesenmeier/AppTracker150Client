@@ -5,8 +5,12 @@
 
     <button mat-raised-button class="nav-btn" routerLink="/index">Home</button>
     <button mat-raised-button class="nav-btn" (click)="DashBoard()">DashBoard</button>
-    <button mat-raised-button class="nav-btn" routerLink="/login">Login</button>
-    <button mat-raised-button class="nav-btn" (click)="Logout()">Log Out</button>
+    <div *ngIf="isLoggedIn; else elseBlock">
+        <button mat-raised-button class="nav-btn" (click)="Logout()">Log Out</button>
+    </div>
+    <ng-template #elseBlock>
+            <button mat-raised-button class="nav-btn" routerLink="/login">Login</button>
+    </ng-template>
 </mat-toolbar>
 <div class="padding">
     
