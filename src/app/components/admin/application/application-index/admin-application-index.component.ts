@@ -13,7 +13,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class AdminApplicationIndexComponent implements OnInit {
 
-  columnNames: string[] = ['PositionName', 'CompanyName', 'StudentName', 'ApplicationStatus', 'DateCreatedUtc']
+  columnNames: string[] = ['PositionName', 'CompanyName', 'StudentName', 'ApplicationStatus', 'DateCreatedUtc','MoreInfo']
   dataSource: MatTableDataSource<AdminApplicationView>; 
 
   @ViewChild(MatPaginator, {static: true})
