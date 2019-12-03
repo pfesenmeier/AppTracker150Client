@@ -51,9 +51,11 @@ import { AdminStudentDetailComponent } from './components/admin/student/admin-st
 import { AdminApplicationDetailComponent } from './components/admin/application/admin-application-detail/admin-application-detail.component';
 
 
+
 const routes = [
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent },
+  
   {
     path: 'cohort', children: [
       { path: '', component: CohortIndexComponent },
@@ -118,6 +120,7 @@ const routes = [
     LoginComponent,
     AdminStudentDetailComponent,
     AdminApplicationDetailComponent,
+
   ],
   imports: [
     BrowserModule,
