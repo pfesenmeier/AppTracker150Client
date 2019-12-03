@@ -3,22 +3,22 @@
 
 
 <div *ngIf="studentProfile">
-  <div mat-row >
-    <div *ngIf="{{ studentProfile.LinkedInLink}}">
+  <div mat-row style="display:flex; justify-content: center;">
+    <div *ngIf="studentProfile.LinkedInLink">
       <a href="{{ studentProfile.LinkedInLink }}"><img class="icon" src="../../../../../assets/linkedin icon.png" /></a>
     </div>
-    <div *ngIf="{{studentProfile.GitHub}}">
+    <div *ngIf="studentProfile.GitHub">
       <a href="{{ studentProfile.GitHub }}"><img class="icon" src="../../../../../assets/github.png" /></a>
     </div>
-      <div *ngIf="{{ studentProfile.ResumeLink }}">
+      <div *ngIf=" studentProfile.ResumeLink ">
       <a href="{{ studentProfile.ResumeLink }}"><img class="icon" src="../../../../../assets/resume.jpg" /></a>
     </div>
-    <div *ngIf="{{ studentProfile.PortfolioLink }}">
+    <div *ngIf="studentProfile.PortfolioLink">
       <a href="{{ studentProfile.PortfolioLink }}"><img class="icon" src="../../../../../assets/portfolio.png "/></a>
     </div>
-  </div>
-
 </div>
+</div>
+<h2>Applications</h2>
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
