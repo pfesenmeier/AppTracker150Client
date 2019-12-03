@@ -83,7 +83,8 @@ const routes = [
     { path: 'student', component: AdminStudentIndexComponent },
     { path: 'detail/:id', component: AdminStudentDetailComponent },
     { path: 'application', component: AdminApplicationIndexComponent },
-    {path: 'app/:studentid/:id', component: AdminApplicationDetailComponent }
+    { path: 'app/:studentid/:id', component: AdminApplicationDetailComponent },
+    { path: 'delete/:id', component: StudentDeleteComponent }
   ]},
   { path: '**', component: IndexComponent }
 ];

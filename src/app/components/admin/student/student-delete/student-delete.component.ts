@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Application } from 'src/app/models/Application';
+import { ActivatedRoute, Router } from '@angular/router';
+import { StudentProfile } from 'src/app/models/StudentProfile';
+import { AdminStudentService } from 'src/app/services/admin-student.service';
+import { UserInfo } from 'src/app/models/UserInfo';
 
 @Component({
   selector: 'app-student-delete',
@@ -7,9 +12,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentDeleteComponent implements OnInit {
 
-  constructor() { }
+
+ user: UserInfo;
+
+  constructor(private activatedRoute: ActivatedRoute, private adminStudentService: AdminStudentService, private router: Router) {
+    this.activatedRoute.paramMap.subscribe(params => {
+    adminStudentService.getUser(params.get('id')).subscribe((user: UserInfo) => {
+      this.user = user;
+      console.log(user);
+      });
+    });
+   }
 
   ngOnInit() {
   }
 
+  onDelete() {
+  this.adminStudentService.deleteStudent(this.user.Id).subscribe(() => {
+      this.router.navigate(['/admin/student/']);
+   });
+  }
 }
+
