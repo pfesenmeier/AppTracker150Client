@@ -18,12 +18,20 @@ export class AdminStudentService {
       return this._http.get(`${APIURL}/Admin/Students?id=${id}`, { headers: this.getHeaders()})
     }
 
+    getUser(id:string){
+      return this._http.get(`${APIURL}/Admin/Users?id=${id}`, { headers: this.getHeaders()})
+    }
+
     getApplications(){
       return this._http.get(`${APIURL}/Admin/Applications`, { headers: this.getHeaders() })
     }
 
     getApplicationsByStudentId(id,studentId){
       return this._http.get(`${APIURL}/Admin/Applications?id=${id}&studentId=${studentId}`, { headers: this.getHeaders() })
+    }
+
+    deleteStudent(id: number){
+      return this._http.delete(`${APIURL}/Admin/Students?id=${id}`, { headers: this.getHeaders() });
     }
 
   private getHeaders(){

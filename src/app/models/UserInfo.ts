@@ -3,4 +3,6 @@ export interface UserInfo{
     HasRegistered: boolean;
     LoginProvider?: any;
     IsAdmin: boolean;
+    Id?: number;
+    UserName?: string;
 }
