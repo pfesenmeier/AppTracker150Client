@@ -34,7 +34,7 @@ export class RegistrationComponent implements OnInit {
     this.authService.register(this.registerForm.value).subscribe(()=>{
       this.router.navigate(['admin/index']).then((navigated:boolean) =>{
         if (navigated) {
-          this.snackBarService.openSnackBar("Student Created!",'Close', 50000);
+          this.snackBarService.openSnackBar("User Created!",'Close', 5000);
         }
       });
     });

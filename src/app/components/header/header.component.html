@@ -4,7 +4,7 @@
     <span class="flex-filler"></span>
 
     <button mat-raised-button class="nav-btn" routerLink="/index">Home</button>
-    <button mat-raised-button class="nav-btn" (click)="DashBoard()">DashBoard</button>
+    <button mat-raised-button class="nav-btn" (click)="DashBoard()">Dashboard</button>
     <div *ngIf="isLoggedIn; else elseBlock">
         <button mat-raised-button class="nav-btn" (click)="Logout()">Log Out</button>
     </div>

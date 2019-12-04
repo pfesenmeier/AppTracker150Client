@@ -8,30 +8,30 @@
     
     <div>
         <div>
-            <a mat-raised-button *ngIf="studentProfile.GitHub; else githubblock" href="https://{{studentProfile.GitHub}}">GitHub</a>
+            <a mat-raised-button *ngIf="studentProfile.GitHub; else githubblock" href="{{studentProfile.GitHub}}">GitHub</a>
             <ng-template #githubblock>
-                <a mat-raised-button color="warn">Add your Github!</a>
+                <a mat-raised-button color="warn" disabled>Add your Github!</a>
             </ng-template>
         </div>
         <br>
         <div>
-            <a mat-raised-button *ngIf="studentProfile.ResumeLink; else resumeblock" href="https://{{studentProfile.ResumeLink}}">Resume</a>
+            <a mat-raised-button *ngIf="studentProfile.ResumeLink; else resumeblock" href="{{studentProfile.ResumeLink}}">Resume</a>
             <ng-template #resumeblock>
-                <a mat-raised-button color="warn">Add link to your resume (Google Docs, please)!</a>
+                <a mat-raised-button color="warn" disabled>Add link to your resume (Google Docs, please)!</a>
             </ng-template>
         </div>
         <br>
         <div>
-            <a mat-raised-button *ngIf="studentProfile.PortfolioLink; else portfolioblock" href="https://{{studentProfile.PortfolioLink}}">Portfolio</a>
+            <a mat-raised-button *ngIf="studentProfile.PortfolioLink; else portfolioblock" href="{{studentProfile.PortfolioLink}}">Portfolio</a>
             <ng-template #portfolioblock>
-                <a mat-raised-button color="warn">Add a portfolio!</a>
+                <a mat-raised-button color="warn" disabled>Add a portfolio!</a>
             </ng-template>
         </div>
         <br>
         <div>
-            <a mat-raised-button *ngIf="studentProfile.LinkedInLink; else linkedinblock" href="https://{{studentProfile.LinkedInLink}}">LinkedIn</a>
+            <a mat-raised-button *ngIf="studentProfile.LinkedInLink; else linkedinblock" href="{{studentProfile.LinkedInLink}}">LinkedIn</a>
             <ng-template #linkedinblock>
-                <a mat-raised-button color="warn">Add a LinkedIn profile!</a>
+                <a mat-raised-button color="warn" disabled>Add a LinkedIn profile!</a>
             </ng-template>
         </div>
         <br>
@@ -44,7 +44,7 @@
         </div>
         <br>
         <div>
-            <a mat-raised-button color="primary" ng-href="https://elevenfifty.instructure.com/login/canvas" >Canvas</a>
+            <a mat-raised-button color="primary" href="https://elevenfifty.instructure.com/login/canvas" >Canvas</a>
         </div>
 
         

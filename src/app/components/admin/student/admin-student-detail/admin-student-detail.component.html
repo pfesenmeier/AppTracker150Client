@@ -16,8 +16,8 @@
       <a href="{{ studentProfile.PortfolioLink }}"><img class="icon" src="../../../../../assets/portfolio.png "/></a>
     </div>
 </div>
-</div>
 <h2>Applications</h2>
+<div *ngIf="studentProfile.Applications">
 <mat-form-field>
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
@@ -65,5 +65,7 @@
   <mat-paginator [pageSizeOptions]="[10,20,30]"
   showFirstLastButtons></mat-paginator>
   </div>
+</div>
+</div>
   <br />
   <a mat-raised-button routerLink="/admin/index">Back to Dashboard</a>

@@ -13,11 +13,11 @@
     </div>
     <div>
         <label for=""> StartDateUtc: </label>
-        <span>{{cohort.StartDateUtc}}</span>
+        <span>{{cohort.StartDateUtc | date: 'shortDate'}}</span>
     </div>
     <div>
         <label for="">EndDateUtc: </label>
-        <span>{{cohort.EndDateUtc}}</span>
+        <span>{{cohort.EndDateUtc | date: 'shortDate'}}</span>
     </div>
     <div>
         <label for="">FullTime: </label>
